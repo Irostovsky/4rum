@@ -1,0 +1,8 @@
+<h2>Advanced search results</h2>
+<p>Found: <%= @search.result.size %></p>
+<%= link_to 'New search', new_search_path %>
+<%= will_paginate @search_result %>
+<ul>
+  <%= render :partial => 'result_item', :collection => @search_result, :locals => {:title_search => (@search.place == 'title')} %>
+</ul>
+<%= link_to 'New search', new_search_path %>

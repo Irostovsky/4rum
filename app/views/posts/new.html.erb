@@ -1,0 +1,14 @@
+<fieldset>
+  <legend>New post</legend>  
+  <% form_for @post, :url => {:action => "create"} do |f| %>
+    <%= f.error_messages %>    
+    <p>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>  
+  <%= link_to 'Back', @topic %>
+</fieldset>

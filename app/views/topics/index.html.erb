@@ -1,0 +1,14 @@
+<h1>Topics</h1>
+<fieldset>
+  <legend>Simple topics title search</legend>
+  <% form_tag topics_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Submit", :name => nil %>
+  <% end %>
+</fieldset>  
+<%= render :partial => 'index_topic_menu' %>
+<ul>
+  <%= render :partial => 'topic', :collection => @topics %>
+</ul>
+<br />
+<%= render :partial => 'index_topic_menu' %>

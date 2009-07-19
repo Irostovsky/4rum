@@ -1,0 +1,107 @@
+require 'digest/sha1'
+class User < ActiveRecord::Base
+  has_many :topics
+  has_many :photos
+  has_one :photo, 
+          :class_name => 'Photo',
+          :conditions => 'selected = true' 
+        
+  attr_accessor :password
+  
+  validates_presence_of     :login, :email
+  validates_presence_of     :password,                    :if => :password_required?
+  validates_presence_of     :password_confirmation,       :if => :password_required?
+  validates_length_of       :password, :within => 4..40,  :if =>  Proc.new{|u| !u.password.blank?}
+  validates_confirmation_of :password,                    :if => :password_required?
+  validates_length_of       :login,    :within => 3..40,  :if => Proc.new{|u| !u.login.blank?}  
+  validates_length_of       :email,    :within => 3..100, :if => Proc.new{|u| !u.email.blank?} 
+  validates_uniqueness_of   :login, :email, :case_sensitive => false
+  validates_format_of       :email, :with => /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/, :if => Proc.new{|u| !u.email.blank?} 
+  before_save :encrypt_password
+  
+  def self.authenticate(login, password)
+    u = find_by_login(login)
+    u && u.authenticated?(password) && u.enabled? ? u : nil
+  end
+  
+  def self.encrypt(password, salt)
+    Digest::SHA1.hexdigest("--#{salt}--#{password}--")
+  end
+  
+  def encrypt(password)
+    self.class.encrypt(password, salt)
+  end
+  
+  def authenticated?(password)
+    crypted_password == encrypt(password)
+  end
+  
+  def remember_token?
+    remember_token_expires_at && Time.now.utc < remember_token_expires_at 
+  end
+  
+  def remember_me
+    remember_me_for 2.weeks
+  end
+  
+  def remember_me_for(time)
+    remember_me_until time.from_now.utc
+  end
+  
+  def remember_me_until(time)
+    self.remember_token_expires_at = time
+    self.remember_token            = encrypt("#{email}--#{remember_token_expires_at}")
+    save(false)
+  end
+  
+  def forget_me
+    self.remember_token_expires_at = nil
+    self.remember_token            = nil
+    save(false)
+  end
+  
+  def recently_activated?
+    @activated
+  end
+  
+  def enable
+    self.update_attributes(:read_only => false, :enabled => true)  
+  end
+  
+  def read_only
+    self.update_attributes(:read_only => true, :enabled => true)      
+  end
+  
+  def disable
+    self.update_attributes(:read_only => false, :enabled => false)      
+  end
+
+  def switch_status(param = nil)    
+    case param
+      when 'enable': enable
+      when 'read_only': read_only
+      when 'disable': disable
+    end        
+  end
+  
+  def editable_obj?(obj)            
+    admin? || (self == obj.user && !read_only?) if (obj.instance_of? Topic) || (obj.instance_of? Post)
+  end
+  
+  def self.simple_users
+    User.find(:all, :conditions => ["admin = ?", false])
+  end
+  
+  protected
+
+  def encrypt_password
+    return if password.blank?
+    self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--") if new_record?
+    self.crypted_password = encrypt(password)
+  end
+    
+  def password_required?
+    crypted_password.blank? || !password.blank?
+  end    
+  
+end

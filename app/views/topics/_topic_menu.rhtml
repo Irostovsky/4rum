@@ -1,0 +1,5 @@
+<% if @topic.opened? && !current_user.read_only? %>
+  <%= link_to "Add post", new_topic_post_path(@topic) %> |  
+<% end %>  
+<%= link_to 'Topics', topics_path %>
+<%= will_paginate @posts %>

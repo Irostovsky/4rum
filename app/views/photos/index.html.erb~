@@ -1,0 +1,17 @@
+<h1><%= current_user.login %> photos</h1>
+<%= link_to 'New photo', new_user_photo_path(current_user) %>
+<hr/>
+<ul>
+  <% for photo in current_user.photos %>
+    <li>
+      <%= image_tag(photo.public_filename) %>
+      <% if photo.selected? %>
+        Current
+      <% else %>
+        <%= link_to 'Make current', user_photo_path(current_user, p)%>
+      <% end %>
+    </li>    
+  <% end %>
+</ul>
+<hr/>
+<%= link_to 'New photo', new_user_photo_path(current_user) %>

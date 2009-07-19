@@ -1,0 +1,34 @@
+<h2><%=h @topic.title %></h2>
+<p>
+  Author: <b><%= @topic.user.login %></b>
+  Status: <b><%= (@topic.opened? ? "Opened": "Closed") %></b>
+  <% if current_user.editable_obj?(@topic) %>
+    <%= link_to 'Edit', edit_topic_path(@topic) %>  
+    <% if @topic.opened? %>
+      <%= link_to 'Close topic', topic_state_path(@topic), :method => :put %>
+    <% else %>
+      <%= link_to 'Open topic', topic_state_path(@topic), :method => :put %>   
+    <% end %>  
+  <% end %>
+  <% if current_user.admin? %>
+    <%= link_to 'Delete', @topic, :method => :delete, :confirm => "Are you sure?" %>   
+  <% end %>  
+</p>  
+<p>
+  <%= wiki_text @topic.content %>
+</p>
+
+<% if @topic.posts.empty? %>
+  <p>
+    No posts
+  </p>  
+<% else %>
+  <p>
+    Posts:
+  </p>
+  <%= render :partial => 'topic_menu' %>  
+  <table id="post_list">
+    <%= render :partial => 'post', :collection => @posts %>
+  </table>  
+<% end %>
+<%= render :partial => 'topic_menu' %>  

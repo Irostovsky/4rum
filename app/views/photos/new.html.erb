@@ -1,0 +1,12 @@
+<%= error_messages_for :photo %>
+
+<% form_for(:photo, :url => user_photos_path(current_user), :html => { :multipart => true }) do |f| -%>
+  <p>
+    <label for="photo">Upload photo:</label>
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= submit_tag 'Upload' %>
+  </p>
+<% end -%>
+

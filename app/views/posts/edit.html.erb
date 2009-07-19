@@ -1,0 +1,14 @@
+<fieldset>
+  <legend>Editing post</legend>  
+  <% form_for@post, :url => {:action => 'update'} do |f| %>
+    <%= f.error_messages %>    
+    <p>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  <% end %>  
+  <%= link_to 'Back', @topic %>
+</fieldset>

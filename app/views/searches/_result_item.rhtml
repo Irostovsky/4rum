@@ -1,0 +1,13 @@
+<li>
+  <% if result_item.instance_of?(Topic)%>
+    <%= link_to (h result_item.title), result_item %>
+  <% end %>	
+  <% if result_item.instance_of?(Post)%>
+    <%= link_to (h result_item.topic.title), result_item.topic %>
+  <% end %>	
+  <% unless title_search %>
+    <p>
+      <%= h result_item.content %>
+    </p>
+  <% end %>
+</li>	  

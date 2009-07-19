@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>Editing topic</legend>  
+  <% form_for(@topic) do |f| %>
+    <%= f.error_messages %>    
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  <% end %>  
+  <%= link_to 'Back', @topic %> |
+  <%= link_to 'Topics', topics_path %>
+</fieldset>

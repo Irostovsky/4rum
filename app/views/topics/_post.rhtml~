@@ -1,0 +1,13 @@
+<tr>
+  <td class="author">
+    <%= render :partial => 'topics/user_photo', :object => post.user.photo %>
+    <div><%= h post.user.login %></div>
+    <% if current_user.editable_obj?(post) && @topic.opened? %>
+      <%= link_to "Edit", edit_topic_post_path(@topic, post) %> | 
+      <%= link_to "Delete", topic_post_path(@topic, post), :confirm => 'Are you sure?', :method => 'delete' %>
+    <% end %>
+  </td>  
+  <td class="post">
+    <%= h post.content %>
+  </td>  
+</tr>  

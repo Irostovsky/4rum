@@ -1,0 +1,5 @@
+<h1><%= current_user.login %> photo</h1>
+<%= link_to 'New photo', new_user_photo_path(current_user) %>
+<hr/>
+<%= image_tag(@photo.public_filename) %>
+

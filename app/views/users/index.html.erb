@@ -1,0 +1,9 @@
+<h2>Users</h2>
+<% @users.each do |user| %>
+  <p>
+    <%= h user.login %>
+    <%= link_to_unless user.enabled? && !user.read_only?, "Enabled", user_status_path(user,'enable'), :method => :put %>
+    <%= link_to_unless user.enabled? && user.read_only?, "Read only", user_status_path(user, 'read_only'), :method => :put %>
+    <%= link_to_unless !user.enabled?, "Disabled", user_status_path(user, 'disable'), :method => :put %>    
+  </p>  
+<% end %>  

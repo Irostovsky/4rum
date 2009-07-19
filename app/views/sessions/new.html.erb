@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>Login</legend>
+  <% form_tag session_path do %>
+    <div id="login">
+      <div>
+        <label for="login">Login</label>
+        <%= text_field_tag :login, params[:login] %>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>            
+      <p>
+        <%= submit_tag 'Log in' %> 
+        <%= link_to 'Registration', :new_user %>
+      </p>
+    </div>
+  <% end %>
+</fieldset>

@@ -1,0 +1,27 @@
+development:
+  adapter: mysql
+  database: 4rum_development
+  username: root
+  password:
+  host: localhost
+
+test:
+  adapter: mysql
+  database: 4rum_test
+  username: root
+  password:
+  host: localhost
+
+staging:
+  adapter: mysql
+  database: 4rum_staging
+  username: root
+  password:
+  host: localhost
+
+production:
+  adapter: mysql
+  database: 4rum
+  username: root
+  password:
+  host: localhost

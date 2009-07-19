@@ -1,0 +1,6 @@
+<% if user_photo %>
+  <%= image_tag(user_photo.public_filename) %>
+<% else %>  
+  <%= image_tag("/images/rails.png") %>
+<% end %>       
+

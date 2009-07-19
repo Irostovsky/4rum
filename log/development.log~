@@ -1,0 +1,2008 @@
+
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:29:31) [GET]
+  [4;35;1mPhoto Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 240ms (View: 64, DB: 9) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 10:29:53) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart6997-1>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (25.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick6997-0.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick6997-0.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7003,exited(1)>}
+  [4;35;1mPhoto Create (1.8ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(211207, 'image/jpeg', NULL, NULL, 'Winter_Leaves.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (5.9ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'tiny' AND `photos`.`parent_id` = 6) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick6997-1.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick6997-1.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7005,exited(1)>}
+  [4;35;1mPhoto Create (3.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(211207, 'image/jpeg', 'tiny', 6, 'Winter_Leaves_tiny.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 6) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick6997-2.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick6997-2.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7007,exited(1)>}
+  [4;35;1mPhoto Create (1.0ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(211207, 'image/jpeg', 'thumb', 6, 'Winter_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (69.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 1337ms (DB: 110) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:29:55) [GET]
+  [4;36;1mPhoto Load (3.0ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 102ms (View: 61, DB: 10) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:29:55) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0002/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:29:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0003/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:29:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0004/Creek_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:29:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0005/Dock_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:29:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0006/Winter_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:29:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0006/Winter_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:32:21) [GET]
+  [4;35;1mPhoto Load (1.4ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 214ms (View: 61, DB: 6) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:32:23) [GET]
+  [4;35;1mPhoto Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 80ms (View: 47, DB: 6) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (2.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 10:32:30) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart7160-1>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-0.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-0.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7166,exited(1)>}
+  [4;35;1mPhoto Create (1.5ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', NULL, NULL, 'Autumn_Leaves.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'tiny' AND `photos`.`parent_id` = 9) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-1.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-1.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7168,exited(1)>}
+  [4;35;1mPhoto Create (1.1ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'tiny', 9, 'Autumn_Leaves_tiny.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (2.6ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 9) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-2.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-2.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7170,exited(1)>}
+  [4;35;1mPhoto Create (0.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'thumb', 9, 'Autumn_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (101.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 654ms (DB: 116) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:32:31) [GET]
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 104ms (View: 50, DB: 6) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:32:32) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0009/Autumn_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:32:32) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0009/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:33:28) [GET]
+  [4;35;1mPhoto Load (0.8ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 75ms (View: 41, DB: 9) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:33:29) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0009/Autumn_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:33:30) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0009/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:33:45) [GET]
+  [4;36;1mPhoto Load (1.6ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 66ms (View: 35, DB: 6) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:33:46) [GET]
+  [4;36;1mPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 79ms (View: 42, DB: 7) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 10:33:53) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart7160-1>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-0.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-0.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7176,exited(1)>}
+  [4;36;1mPhoto Create (1.3ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', NULL, NULL, 'Autumn_Leaves.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'tiny' AND `photos`.`parent_id` = 12) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-1.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-1.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7178,exited(1)>}
+  [4;36;1mPhoto Create (0.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'tiny', 12, 'Autumn_Leaves_tiny.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 12) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-2.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-2.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=7180,exited(1)>}
+  [4;36;1mPhoto Create (0.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'thumb', 12, 'Autumn_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (75.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 541ms (DB: 84) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:33:53) [GET]
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 255ms (View: 215, DB: 6) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:33:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:33:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:53:54) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::RMagicProcessor):
+  app/models/photo.rb:6
+  app/controllers/photos_controller.rb:8:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (223.3ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:54:23) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::RMagicProcessorProcessor):
+  app/models/photo.rb:6
+  app/controllers/photos_controller.rb:8:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (105.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:54:48) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::ImageSienceProcessor):
+  app/models/photo.rb:6
+  app/controllers/photos_controller.rb:8:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (212.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:55:12) [GET]
+  [4;35;1mPhoto Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 78ms (View: 41, DB: 7) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 10:55:19) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart7160-0>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-0.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-0.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=8274,exited(1)>}
+  [4;35;1mPhoto Create (1.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(262368, 'image/jpeg', NULL, NULL, 'Humpback_Whale.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.5ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'tiny' AND `photos`.`parent_id` = 15) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-1.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-1.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=8276,exited(1)>}
+  [4;35;1mPhoto Create (0.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(262368, 'image/jpeg', 'tiny', 15, 'Humpback_Whale_tiny.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 15) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick7160-2.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick7160-2.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=8278,exited(1)>}
+  [4;35;1mPhoto Create (1.0ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(262368, 'image/jpeg', 'thumb', 15, 'Humpback_Whale_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (82.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 666ms (DB: 94) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (2.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:55:20) [GET]
+  [4;36;1mPhoto Load (3.4ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 96ms (View: 52, DB: 11) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:55:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:55:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:55:21) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0015/Humpback_Whale_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:55:22) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0015/Humpback_Whale_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:55:58) [GET]
+  [4;35;1mPhoto Load (1.1ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 262ms (View: 81, DB: 9) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:55:59) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:55:59) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:56:00) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0015/Humpback_Whale_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (4.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:56:00) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0015/Humpback_Whale_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 10:57:32) [GET]
+  [4;36;1mPhoto Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 89ms (View: 51, DB: 6) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 10:57:39) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8281-1>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick8281-0.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick8281-0.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=8289,exited(1)>}
+  [4;36;1mPhoto Create (2.2ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', NULL, NULL, 'Dock.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'tiny' AND `photos`.`parent_id` = 18) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick8281-1.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick8281-1.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=8291,exited(1)>}
+  [4;36;1mPhoto Create (0.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', 'tiny', 18, 'Dock_tiny.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.4ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 18) LIMIT 1[0m
+Exception working with image: ImageMagick command ("identify /tmp/mini_magick8281-2.") failed: {:output=>"identify: no decode delegate for this image format `/tmp/mini_magick8281-2.' @ constitute.c/ReadImage/503.\n", :status_code=>#<Process::Status: pid=8293,exited(1)>}
+  [4;36;1mPhoto Create (2.2ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', 'thumb', 18, 'Dock_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (105.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 607ms (DB: 117) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 10:57:40) [GET]
+  [4;35;1mPhoto Load (1.1ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 264ms (View: 221, DB: 9) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:57:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:57:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0012/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (3.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:57:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0015/Humpback_Whale_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:57:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0015/Humpback_Whale_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:57:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0018/Dock_tiny_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 10:57:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0018/Dock_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:01:15) [GET]
+  [4;36;1mPhoto Load (1.9ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mUser Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 281ms (View: 38, DB: 9) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:01:18) [GET]
+  [4;36;1mPhoto Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 199ms (View: 45, DB: 5) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 11:01:24) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8281-2>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-2' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.8ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', NULL, NULL, 'Autumn_Leaves.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 21) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-2' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.8ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'thumb', 21, 'Autumn_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (18.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 190ms (DB: 29) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:01:24) [GET]
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 198ms (View: 128, DB: 8) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:01:25) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0021/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:02:58) [GET]
+  [4;35;1mPhoto Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 118ms (View: 47, DB: 6) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 11:03:05) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8281-1>}, "commit"=>"Create", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (10.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (5.7ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(664489, 'image/jpeg', NULL, NULL, 'Forest.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 23) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (0.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(664489, 'image/jpeg', 'thumb', 23, 'Forest_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (54.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 268ms (DB: 77) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:03:05) [GET]
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 190ms (View: 114, DB: 9) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:03:06) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0021/Autumn_Leaves_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:03:06) [GET]
+
+ActionController::RoutingError (No route matches "/photos/0000/0023/Forest_thumb_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:04:15) [GET]
+  [4;35;1mPhoto Load (0.8ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (7.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 197ms (View: 109, DB: 12) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (1.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:12:48) [GET]
+  [4;36;1mPhoto Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #4 of app/views/photos/new.html.erb:
+1: <h1>Listing photos</h1>
+2: 
+3: <ul>
+4:   <% for photo in @photos %>
+5:     <li>
+6:       <%= image_tag(photo.public_filename) %>
+7:     </li>    
+
+    app/views/photos/new.html.erb:4
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (113.9ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:15:45) [GET]
+  [4;36;1mPhoto Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 124ms (View: 51, DB: 7) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 11:15:53) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8281-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (1.2ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', NULL, NULL, 'Dock.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 25) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.8ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', 'thumb', 25, 'Dock_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 132ms (DB: 23) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:15:54) [GET]
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 132ms (View: 61, DB: 8) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:15:54) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0021/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:15:55) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0021/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:15:55) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0023/Forest.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 11:15:55) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0023/Forest_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:21:02) [GET]
+  [4;36;1mPhoto Load (1.4ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 123ms (View: 49, DB: 7) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:21:04) [GET]
+  [4;36;1mPhoto Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 113ms (View: 43, DB: 6) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 11:21:11) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8281-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', NULL, NULL, 'Autumn_Leaves.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (2.3ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 27) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.7ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'thumb', 27, 'Autumn_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (177.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 290ms (DB: 187) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:21:12) [GET]
+  [4;35;1mPhoto Load (1.6ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 122ms (View: 48, DB: 8) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:21:24) [GET]
+  [4;36;1mPhoto Load (5.4ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 127ms (View: 48, DB: 13) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:22:30) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::MiniMagicProcessor):
+  app/models/photo.rb:9
+  app/controllers/photos_controller.rb:8:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.9ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:28:43) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::RMagicProcessor):
+  app/models/photo.rb:9
+  app/controllers/photos_controller.rb:8:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (222.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:29:48) [GET]
+
+NameError (uninitialized constant Technoweenie::AttachmentFu::Processors::RMagickProcessor):
+  app/models/photo.rb:12
+  app/controllers/photos_controller.rb:8:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 11:30:41) [GET]
+  [4;36;1mPhoto Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 100ms (View: 53, DB: 8) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 11:30:49) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8281-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (1.5ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(228863, 'image/jpeg', NULL, NULL, 'Desert_Landscape.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 29) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart8281-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (2.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(228863, 'image/jpeg', 'thumb', 29, 'Desert_Landscape_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (15.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 99ms (DB: 26) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 11:30:49) [GET]
+  [4;35;1mPhoto Load (1.3ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 97ms (View: 49, DB: 9) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (74.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 12:57:53) [GET]
+  [4;35;1mPhoto Columns (69.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 387ms (View: 134, DB: 149) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 12:58:07) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart14923-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart14923-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (121.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', NULL, NULL, 'Dock.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (3.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 31) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart14923-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.6ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', 'thumb', 31, 'Dock_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (84.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 425ms (DB: 215) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 12:58:07) [GET]
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 185ms (View: 137, DB: 11) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 12:58:32) [GET]
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 84ms (View: 38, DB: 6) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 12:58:35) [GET]
+  [4;35;1mPhoto Columns (8.7ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 171ms (View: 116, DB: 13) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (3.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 12:58:42) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart14923-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (38.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart14923-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (2.1ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', NULL, NULL, 'Autumn_Leaves.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.4ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 33) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart14923-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (0.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'thumb', 33, 'Autumn_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (76.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 214ms (DB: 125) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 12:58:42) [GET]
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (4.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 100ms (View: 51, DB: 10) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:03:27) [GET]
+  [4;35;1mPhoto Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 89ms (View: 41, DB: 8) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-17 13:03:33) [GET]
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Load (54.2ms)[0m   [0mSELECT * FROM `topics` ORDER BY created_at DESC LIMIT 0, 10[0m
+  [4;36;1mTopic Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT count(*) AS count_all FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+Rendered topics/_index_topic_menu (15.0ms)
+Rendered topics/_topic (14.2ms)
+Rendered topics/_topic (1.4ms)
+Rendered topics/_topic (1.4ms)
+Rendered topics/_topic (2.3ms)
+Rendered topics/_topic (1.4ms)
+Rendered topics/_topic (1.3ms)
+Rendered topics/_topic (1.4ms)
+Rendered topics/_topic (1.6ms)
+Rendered topics/_topic (1.2ms)
+Rendered topics/_topic (1.5ms)
+Rendered topics/_index_topic_menu (4.4ms)
+Completed in 216ms (View: 92, DB: 62) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-17 13:04:59) [GET]
+  [4;35;1mUser Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Load (1.5ms)[0m   [0mSELECT * FROM `topics` ORDER BY created_at DESC LIMIT 0, 10[0m
+  [4;36;1mTopic Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+Rendered topics/_index_topic_menu (14.2ms)
+Rendered topics/_topic (7.3ms)
+Rendered topics/_topic (0.9ms)
+Rendered topics/_topic (1.2ms)
+Rendered topics/_topic (1.3ms)
+Rendered topics/_topic (1.6ms)
+Rendered topics/_topic (1.1ms)
+Rendered topics/_topic (1.2ms)
+Rendered topics/_topic (1.3ms)
+Rendered topics/_topic (1.2ms)
+Rendered topics/_topic (1.3ms)
+Rendered topics/_index_topic_menu (13.5ms)
+Completed in 196ms (View: 95, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:05:06) [GET]
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 205ms (View: 71, DB: 8) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:05:07) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:05:07) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:05:09) [GET]
+  [4;36;1mPhoto Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 96ms (View: 49, DB: 8) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:05:11) [POST]
+  Parameters: {"commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+DEPRECATION WARNING: ActiveRecord::Errors.default_error_messages has been deprecated. Please use I18n.translate('activerecord.errors.messages').. (called from default_error_messages at /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/validations.rb:24)
+DEPRECATION WARNING: ActiveRecord::Errors.default_error_messages has been deprecated. Please use I18n.translate('activerecord.errors.messages').. (called from default_error_messages at /usr/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/validations.rb:24)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 127ms (View: 49, DB: 10) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:05:19) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15247-0>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-0' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (1.5ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', NULL, NULL, 'Autumn_Leaves.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 35) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-0' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (1.0ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(276216, 'image/jpeg', 'thumb', 35, 'Autumn_Leaves_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (58.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 157ms (DB: 66) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:05:20) [GET]
+  [4;35;1mPhoto Load (0.6ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (4.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 92ms (View: 46, DB: 9) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:05:20) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:05:21) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:13:17) [GET]
+  [4;36;1mPhoto Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 94ms (View: 51, DB: 9) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (9.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:13:23) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15247-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (1.4ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(264409, 'image/jpeg', NULL, NULL, 'Creek.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 37) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (1.1ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(264409, 'image/jpeg', 'thumb', 37, 'Creek_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (13.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 94ms (DB: 32) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:13:23) [GET]
+  [4;35;1mPhoto Load (1.1ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 91ms (View: 53, DB: 8) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:13:24) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:13:24) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (11.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:20:38) [GET]
+  [4;36;1mPhoto Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 96ms (View: 57, DB: 19) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:20:45) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15247-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(262368, 'image/jpeg', NULL, NULL, 'Humpback_Whale.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (2.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 39) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.9ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(262368, 'image/jpeg', 'thumb', 39, 'Humpback_Whale_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (74.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 152ms (DB: 85) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:20:45) [GET]
+  [4;35;1mPhoto Load (0.8ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (5.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 93ms (View: 53, DB: 10) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:20:46) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:20:46) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:26:22) [GET]
+  [4;36;1mPhoto Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 91ms (View: 52, DB: 9) | 200 OK [http://localhost/photos/new]
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:26:29) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15247-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;36;1mPhoto Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (63.7ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', NULL, NULL, 'Dock.jpg', NULL, NULL)[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 41) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15247-1' @ constitute.c/ReadImage/503
+  [4;36;1mPhoto Create (0.7ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(316892, 'image/jpeg', 'thumb', 41, 'Dock_thumb.jpg', NULL, NULL)[0m
+  [4;35;1mSQL (21.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 165ms (DB: 92) | 302 Found [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:26:29) [GET]
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 98ms (View: 58, DB: 8) | 200 OK [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:26:30) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:26:31) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:28:15) [GET]
+  [4;35;1mPhoto Columns (6.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 278ms (View: 71, DB: 12) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:28:23) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15771-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.7ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(664489, 'image/jpeg', NULL, NULL, 'Forest.jpg', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 43) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (0.7ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(664489, 'image/jpeg', 'thumb', 43, 'Forest_thumb.jpg', NULL, NULL)[0m
+  [4;36;1mSQL (156.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 283ms (DB: 164) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:28:23) [GET]
+  [4;36;1mPhoto Load (1.5ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 109ms (View: 63, DB: 9) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:28:24) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:28:24) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:56:01) [GET]
+  [4;35;1mPhoto Columns (9.1ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 190ms (View: 79, DB: 13) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:56:29) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15771-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', NULL, NULL, 'rails.png', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 45) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (0.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', 'thumb', 45, 'rails_thumb.png', NULL, NULL)[0m
+  [4;36;1mSQL (171.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 285ms (DB: 180) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:56:29) [GET]
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 102ms (View: 62, DB: 7) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:56:30) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:56:31) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 13:57:31) [GET]
+  [4;35;1mPhoto Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 99ms (View: 51, DB: 9) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 13:57:37) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15771-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.4ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', NULL, NULL, 'rails.png', NULL, NULL)[0m
+  [4;36;1mPhoto Load (9.8ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 47) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (0.9ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', 'thumb', 47, 'rails_thumb.png', NULL, NULL)[0m
+  [4;36;1mSQL (50.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 140ms (DB: 66) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 13:57:38) [GET]
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 108ms (View: 67, DB: 8) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:57:39) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-17 13:57:39) [GET]
+
+ActionController::RoutingError (No route matches "/files/0000/0033/Autumn_Leaves_thumb.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 14:02:03) [GET]
+  [4;35;1mPhoto Load (1.4ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 85ms (View: 43, DB: 8) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 14:02:05) [GET]
+  [4;35;1mPhoto Columns (25.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 119ms (View: 49, DB: 32) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 14:02:11) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15771-1>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (5.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (0.8ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', NULL, NULL, 'rails.png', NULL, NULL)[0m
+  [4;36;1mPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 49) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-1' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.1ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', 'thumb', 49, 'rails_thumb.png', NULL, NULL)[0m
+  [4;36;1mSQL (54.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 154ms (DB: 66) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 14:02:12) [GET]
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 96ms (View: 51, DB: 7) | 200 OK [http://localhost/photos]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-17 14:05:42) [GET]
+  [4;35;1mPhoto Columns (13.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 195ms (View: 78, DB: 18) | 200 OK [http://localhost/photos/new]
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-17 14:05:47) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart15771-3>}, "commit"=>"Upload", "authenticity_token"=>"Oe+UxdQUay777uWxluh2HHUBpCo3+wVRvtx9sXS/rEQ="}
+  [4;35;1mPhoto Columns (14.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mBEGIN[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-3' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.0ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', NULL, NULL, 'rails.png', NULL, NULL)[0m
+  [4;36;1mPhoto Load (1.6ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`thumbnail` = 'thumb' AND `photos`.`parent_id` = 51) LIMIT 1[0m
+Exception working with image: no decode delegate for this image format `/tmp/RackMultipart15771-3' @ constitute.c/ReadImage/503
+  [4;35;1mPhoto Create (1.2ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `parent_id`, `filename`, `height`, `width`) VALUES(6646, 'image/png', 'thumb', 51, 'rails_thumb.png', NULL, NULL)[0m
+  [4;36;1mSQL (27.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/photos
+Completed in 338ms (DB: 48) | 302 Found [http://localhost/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-17 14:05:48) [GET]
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mUser Columns (30.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Completed in 130ms (View: 59, DB: 35) | 200 OK [http://localhost/photos]

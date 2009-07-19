@@ -1,0 +1,4 @@
+<% unless current_user.read_only? %>
+  <%= link_to 'New topic', new_topic_path %>
+<% end %>
+<%= will_paginate @topics %>

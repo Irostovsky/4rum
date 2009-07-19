@@ -1,0 +1,39 @@
+<fieldset>
+  <legend>Advanced search</legend>
+  
+  <% form_for @search, :html => {:method => :get} do |f| %>
+    <p>
+      <%= f.label :keywords %><br />
+      <%= f.text_field :keywords %>
+    </p>
+    <p>
+      <%= f.label :place, 'Place' %><br />
+      <%= f.select :place, Search::PLACES %>
+    </p>
+    <p>
+      <%= f.label :occurrence, 'Occurrence' %><br />
+      <%= f.select :occurrence, Search::OCCURRENCES %>
+    </p>
+    <p>
+      <%= f.label :date_from, 'Created from' %><br />
+      <%= f.date_select :date_from, :include_blank => true %>
+    </p>
+    <p>
+      <%= f.label :date_to, 'Created to' %><br />
+      <%= f.date_select :date_to, :include_blank => true %>
+    </p>
+    <p>
+      <%= f.label :selected_topics, 'From topics' %><br />
+      <%= select_tag 'topic_ranges[]', options_for_select(Search.to_selected_topics), {:multiple => true, :size => 6 }%>
+    </p>
+    <p>
+      <%= f.label :selected_users, 'Users' %><br />
+      <%= select_tag 'user_ranges[]', options_for_select(Search.to_selected_users), {:multiple => true, :size => 6 }%>
+    </p>
+    <p>
+      <%= f.submit 'Search', :name => nil %>
+    </p>
+  <% end %>
+  
+  <%= link_to 'Back', :topics %>
+</fieldset>

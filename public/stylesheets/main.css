@@ -1,0 +1,95 @@
+body{
+	margin:0;
+	padding:0;
+	margin:10px auto 20px auto;
+	font-size:14px;
+	width:60%;
+}
+.clear {
+	clear:both;
+}
+img{
+	border:0;
+}
+a{
+	text-decoration:none;
+	color:blue;
+	font-size:14px;		
+}
+a:hover{
+	text-decoration:underline;
+	
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+label {
+	margin-top:10px;
+	display:block;	
+}
+#notice{
+	margin-top:10px;
+	margin-bottom:10px;
+	color:green;	
+}
+#user_menu { 
+	margin-top:10px;
+	margin-bottom:10px;	
+}
+#user_menu a{
+	padding-left:10px;	
+}
+#top{
+	font-size:20px;
+}
+
+table tr{
+	vertical-align:top;	
+}
+#post_list{
+	width:100%;	
+}
+#post_list .author{
+	width:20%;	
+}
+ul li{
+	margin-bottom:10px;
+}
+.pagination{
+	margin-top:10px;
+	margin-bottom:10px;
+}
