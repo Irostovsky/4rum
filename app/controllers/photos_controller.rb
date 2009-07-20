@@ -17,8 +17,7 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(params[:photo])
-    #@photo.user = current_user
-    if current_user.photos << @photo #@photo.save
+    if current_user.photos << @photo 
       flash[:notice] = 'Photo was successfully created.'
       redirect_to user_photos_path(current_user)     
     else

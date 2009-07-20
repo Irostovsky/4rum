@@ -4,6 +4,7 @@
 <ul>
   <% for photo in current_user.photos %>
     <li>
+     <img src = "<%= url_for(user_photo_photos_management(current_user, photo, photo))%>" />       
       <% if photo.selected? %>
         Current
       <% else %>

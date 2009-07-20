@@ -1,5 +1,5 @@
 <% if user_photo %>
-  <%= image_tag(user_photo.public_filename) %>
+  <img src = "<%= url_for(user_photo_photos_management_path(current_user, user_photo, user_photo))%>" />
 <% else %>  
   <%= image_tag("/images/rails.png") %>
 <% end %>       

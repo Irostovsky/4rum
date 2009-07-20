@@ -3792,3 +3792,950 @@ ActionController::RoutingError (No route matches "/files/0000/0001/Autumn_Leaves
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:17:53) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (5.7ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+
+ActionView::TemplateError (undefined method `user_photo_photos_management' for #<ActionView::Base:0xb70caeec>) on line #7 of app/views/photos/index.html.erb:
+4: <ul>
+5:   <% for photo in current_user.photos %>
+6:     <li>
+7:      <img src = "<%= url_for(user_photo_photos_management(current_user, photo, photo))%>" />       
+8:       <% if photo.selected? %>
+9:         Current
+10:       <% else %>
+
+    app/views/photos/index.html.erb:7
+    /home/ivan/.gem/ruby/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    /home/ivan/.gem/ruby/1.8/gems/mislav-will_paginate-2.3.11/lib/will_paginate/finder.rb:168:in `method_missing'
+    app/views/photos/index.html.erb:5
+
+Rendered rescues/_trace (150.5ms)
+Rendered rescues/_request_and_response (2.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:18:14) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (3.5ms)
+Completed in 209ms (View: 102, DB: 11) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:15) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (103.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:15) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"1", "photo_id"=>"2"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (148.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:16) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"1", "photo_id"=>"3"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (223.0ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:16) [GET]
+  Parameters: {"id"=>"4", "user_id"=>"1", "photo_id"=>"4"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (107.6ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-07-20 14:18:26) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"1"}
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Update (7.9ms)[0m   [0;1mUPDATE `photos` SET selected = false WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (5.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '3') AND (`photos`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (1.1ms)[0m   [0;1mUPDATE `photos` SET `selected` = 1, `size` = 12006 WHERE `id` = 3[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 489ms (DB: 23) | 302 Found [http://localhost/users/1/photos/3]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:18:26) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (2.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.8ms)
+Completed in 404ms (View: 317, DB: 10) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:27) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (112.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:28) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"1", "photo_id"=>"2"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (102.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:28) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"1", "photo_id"=>"3"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (303.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:28) [GET]
+  Parameters: {"id"=>"4", "user_id"=>"1", "photo_id"=>"4"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (159.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-07-20 14:18:29) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"1"}
+  [4;36;1mUser Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Update (30.9ms)[0m   [0;1mUPDATE `photos` SET selected = false WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.5ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '2') AND (`photos`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (1.7ms)[0m   [0;1mUPDATE `photos` SET `selected` = 1, `size` = 11046 WHERE `id` = 2[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 530ms (DB: 50) | 302 Found [http://localhost/users/1/photos/2]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:18:30) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.8ms)
+Completed in 125ms (View: 37, DB: 11) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:30) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (221.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:31) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"1", "photo_id"=>"2"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (103.9ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:31) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"1", "photo_id"=>"3"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (117.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:18:32) [GET]
+  Parameters: {"id"=>"4", "user_id"=>"1", "photo_id"=>"4"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (129.3ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:18:58) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Load (1.5ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;36;1mPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.4ms)
+Completed in 235ms (View: 30, DB: 11) | 200 OK [http://localhost/users/1/photos]
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 14:20:12) [GET]
+
+ActionController::RoutingError (No route matches "/users/1/photos/1/photos_management/1" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2009-07-20 14:20:36) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+
+SyntaxError (/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:7: syntax error, unexpected tSYMBEG, expecting ')'
+               :type => photo.content_type,
+                ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+               :dispsition => 'inline')
+                             ^
+/home/ivan/Projects/4rum/app/controllers/photos_managements_controller.rb:8: syntax error, unexpected ')', expecting kEND):
+  
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:22:35) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+
+NameError (undefined local variable or method `param' for #<PhotosManagementsController:0xb70450a8>):
+  app/controllers/photos_managements_controller.rb:4:in `show'
+
+Rendered rescues/_trace (211.6ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:22:46) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;36;1mPhoto Columns (29.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (2.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+
+NoMethodError (protected method `current_data' called for #<Photo:0xb71b2968>):
+  app/controllers/photos_managements_controller.rb:5:in `show'
+
+Rendered rescues/_trace (104.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:24:03) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;35;1mPhoto Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+Sending data Autumn_Leaves.jpg
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size):
+  app/controllers/photos_managements_controller.rb:5:in `show'
+
+Rendered rescues/_trace (203.7ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:24:32) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;36;1mPhoto Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.8ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+Sending data Autumn_Leaves.jpg
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size):
+  app/controllers/photos_managements_controller.rb:6:in `show'
+
+Rendered rescues/_trace (108.5ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:25:27) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;35;1mPhoto Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+Sending data Autumn_Leaves.jpg
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size):
+  app/controllers/photos_managements_controller.rb:6:in `show'
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:26:04) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;36;1mPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.1ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+Sending data Autumn_Leaves.jpg
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size):
+  app/controllers/photos_managements_controller.rb:6:in `show'
+
+Rendered rescues/_trace (107.5ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:28:19) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;35;1mPhoto Columns (7.7ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+Sending data Autumn_Leaves.jpg
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size):
+  app/controllers/photos_managements_controller.rb:6:in `show'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:29:58) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"1", "photo_id"=>"1"}
+  [4;36;1mPhoto Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.5ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '1') LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.content):
+  app/controllers/photos_managements_controller.rb:5:in `show'
+
+Rendered rescues/_trace (102.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TopicsController#index (for 127.0.0.1 at 2009-07-20 14:30:13) [GET]
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (5.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mTopic Load (90.2ms)[0m   [0mSELECT * FROM `topics` ORDER BY created_at DESC LIMIT 0, 10[0m
+  [4;36;1mTopic Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `topics`[0m
+  [4;35;1mSQL (88.1ms)[0m   [0mSELECT count(*) AS count_all FROM `topics` [0m
+Rendering template within layouts/application
+Rendering topics/index
+Rendered topics/_index_topic_menu (11.7ms)
+Rendered topics/_topic (14.9ms)
+Rendered topics/_topic (1.3ms)
+Rendered topics/_topic (1.6ms)
+Rendered topics/_topic (1.6ms)
+Rendered topics/_topic (1.2ms)
+Rendered topics/_topic (1.5ms)
+Rendered topics/_topic (5.3ms)
+Rendered topics/_topic (7.8ms)
+Rendered topics/_topic (1.3ms)
+Rendered topics/_topic (1.5ms)
+Rendered topics/_index_topic_menu (3.4ms)
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.9ms)
+Completed in 516ms (View: 236, DB: 191) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:30:15) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (5.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Load (4.8ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Load (1.4ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.9ms)
+Completed in 228ms (View: 140, DB: 14) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-20 14:30:17) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.5ms)
+Completed in 122ms (View: 27, DB: 8) | 200 OK [http://localhost/users/1/photos/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-20 14:30:43) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Columns (32.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mPhoto Load (2.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.6ms)
+Completed in 178ms (View: 43, DB: 40) | 200 OK [http://localhost/users/1/photos/new]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-20 14:30:48) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (5.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.5ms)
+Completed in 137ms (View: 19, DB: 12) | 200 OK [http://localhost/users/1/photos/new]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-20 14:30:50) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8549-1>}, "commit"=>"Upload", "authenticity_token"=>"qQmJIaIkeyjx5CfhcadoHNeAmVWIS1kmfiKM5BOHhyY=", "user_id"=>"1"}
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Create (2.2ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `selected`, `user_id`, `parent_id`, `filename`, `height`, `db_file_id`, `width`) VALUES(228863, 'image/jpeg', NULL, 0, 1, NULL, 'Desert_Landscape.jpg', 113, NULL, 150)[0m
+  [4;36;1mDbFile Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Create (1.7ms)[0m   [0mINSERT INTO `db_files` (`data`, `created_at`, `updated_at`) VALUES(x'ffd8ffe000104a46494600010101006000600000ffdb004300030202020202030202020303030304060404040404080606050609080a0a090809090a0c0f0c0a0b0e0b09090d110d0e0f101011100a0c12131210130f101010ffdb00430103030304030408040408100b090b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010ffc00011080071009603011100021101031101ffc4001d000002030003010100000000000000000004050306070102080900ffc4004810000201030302040304040b0702070000010203040511000621123107134151142261081532713542819123243336527273a1b1b3c11634627475b4c2b2f1095376c3d1e1f0ffc4001b01000203010101000000000000000000000203010405000607ffc40037110001030203040903030501010100000001000203112104123141516171051322328191a1c1f014b1d13342e106157282f12334b2ffda000c03010002110311003f00c392075e41c6aa8702b66854e8873cf7d75003552d2744446a40193dfd8ea6a37aeca5191957c2b283f98d7120d94804299692372429e9c76c9e34a2056c8c1a6a8882d9d6015ce7e9cea00aa2046d528b64a0e501e3beb935a68177861994f4b7583e9a105482362284138fc7c63dfd75c42e53253bb8c85cfd73a12b81a152474b3a9ca2641f4ce94e17aa734a9c53d428ea30363df1a80ead885246e2b8eb910fcca54fd3501cc3b1764713652475354bc07040f42342e2362301c132a7ab122012c7cfa63559c5edeeab6c0c77794f0d4792ff0022b32fb0c83fb34890759aa7c6e11e8ba575c1e50518cc460e0b633fb740c85a2ea649dced024d218d881d3ab428553712762e3e1e29067201d3280a51241552a5b34e4fea9fa1f5d6882b3036a9826dd95c0ca47f90d49a9d54e42a51b6092074303f4d01706ea8db112aa34bbe76c565deaecd678a7b84943218a72bf202e0e195323e623f67f76a257f5342eda8a087ea49115e89b1de5e1f253d04ff007c737190450c410f9818ae7e653c8e077e46a0c82a680d930447b3c53bb6d76ddafa834f4b798125f33ca11c8e23666f4e907f16723b6b992075da513a0737bc13dfb96643cd430fcb52641541d52e86cee581f8824e7d7405fb8a60894af6562a333e75dd65aab84572b98ec720fc13634a2fdb54cea48d88c82d55c9ca956c71a1eb09b29eacee4ca086e90a86102b81e9807521c46884c7c11b05055d7925ed6873eb8c6b9cecd7a2263083aa3a3daa1bbdb3a7df490e20d289d941da8c4da11291d56e997f25d0b813a04c6d06a576976b1407a699860f195c1d24b5c9c1cdd850351b718e43c38fd9a59a84632bb6a5d3ed34e7803f66b848147540a164db3129186fdc35dd70dea0c04a574fb60364aa11e9c91adcbaf3ed211916da913928d8ec091a539ce0538528bf5e28e5b1d86e77a29d4b6fa1a8abe4641f2e366ffc7502af700b9c3234bb72f3a787af68b56f9aaa3b7d2c71c4b494b7ba742f2b19cc88bd4986cfab1c02dc8c81ceaa62bad9206b9f724907850ad5c175387c4b991e940e17d6b442f8854b6da7f18b67d05152b46915c95fa027487459e653c7d3cb2a47b0fa69b862e760e4713b3d87e557c686b71d0b40dbee56a1b92c29494d493c10c2fd1748a446182060751e07b050df98d6661e4edd09d8b6710cac551bfd95b7c54bbdc364d05a6badf0a4ed5f7ea2b649195cb3c733b06e8e461b81c9edceb560a48483b012b0f107ab6b481a9015956d0e5991b0707b8d2c3814e2da688e836ccb28053e6cfa6b9c09d14070d0a3a1da7503a59a23d27d71a1eaddb54e768da99d3ecf97a418c1cfaf1db45d503a20ebb7a2576d4b1e525ca91edeba9103b6d90fd43549f70562a06895f9f51a1113910998745d5682f54ed98de4c0fa1e3442a1017028fa7bc5fa9180632b7b82a4e747d706d9065cc9a47ba6a24663514a18939384c685d283752d888011f4974b7ca07c4d247f31cfcd1fff008d2f3f00533ab3bd1ef4db62b93a7e1a9f3e8ca8411a87754ed8b83a467ee283936d5a2ab84a7830beab1e0eaa39a0ec561b2505dca8947b621623a157f2048ff1d7a6c81796eb5c050a7f6ddba7f93ea55078c38e3f7e9ad883ac503e634a843f899b12b2e1e146f3a5b7c10a554db76e2b14a92748eaf8773cfee3e9a318615040d10fd5920b6baaf156c2b1535c37bd92f491c725054d12d222b382f2f4d3178d0e3b1ea8cf6cf2bf5d79cc44c440e61d6b5f5fc2f5986c38fa963f6114f4fca03c74b5cb43e2a6cdb924d514b4d20e859a272258e4f88691c86c1e7f8607f7e9bd17207e1a5691523f141f649e988cc78b85c0d01fcd7dd6c15495371b053d4d5d3fc44b4f1c72c92a004c9f2234ae028e4e18f18c839c70758c486c8436d5a8fc2de89ae745575e943f9493c4bf11697766d7d902fb6d5a0be5bbc43a18aa169416a77a54eac48b231c96018063803273819c6b770dd500ea1b96fa2f358e6cf46e6160ea78ee5eb3a9f0a9848cd0d446cb92579ee3d34ffedce22a2e95fdc99b42e9078773452f43274ffc41b53f46e6d8841f5a1d709f41b4628e3024ab6eaedc138d5918134b82ab3f1a01d42963dab49d47cc9b38ec5782341f4601ba238c71eea9a9f6d512b8491549cf0c7234f6e0d8eb1559f8c91b709e51ed9869ba49c14f6c6aec7d18d65cace97a55ceb0b265158ed8720d3839ee3567e861dcaa1e919b5051506d7b3b9c9a303e9a13d1f00fdab8f4ae207ee5e60fb547dadb65781d7893c3fd8db768b70eeda6c7de3f145d692d65951d15fa403348558928197a38c9c9c6ab4b82c3834caade1f1f8b78cd9aca3fb1d7da62dfe3bde6bb636feb3d243b9dde4aaa0fbb680c549f0691e595d8b92240c0e3839079eda48c1e1eb94b75d1597e331593335d61ad789a2f56bec0dbca4e2887273f2b1d10e8f835cb455cf4a621bfbc150ffb0563ce4472267d9b4b3d1d013546de97c46f0b1ea49233d3f2a9cfae7559b30564c46b44fedce030e94034d18802f4406075537dc11fc7ecadc56e89097aab357c2ab8eecd4d201dbf3d3db896909470ce06abe6bf859bc2cf62b6586469b325be9295fe672a3ada3746661d8e1a461c761dfb6bcde3627ca5c37d7f3ecbdb747be28d8c24dc007cff00ea97c43bedc6f72deab5a486a4c52d0d55198a5cf96f1f4f9abd2460649247ed19d4e0d8c66502d5a83cb620c799242e71bd0b48f0d42bedb2f747516bf3a6a9e8492233c411891087a65560471cff008ea83e3767a0f975a91c8d0ca93a8f659a54df6ca6c37aa6f3e492adf725a6eb1b322e125eb657910803a7e50991d8f48f43ad2ea5e1cd3b32b87e01f5590e95995dbf3b4fadcfd97d38daf77b76ecdab69dcd689164a1b9d245510303faa57b7d082083f51af530d0c4d78dc3ecbc6ce5ec9e461d84fdd1a6933c64fbf7efa6b446eef0492f90776e170285d4f6c8fcb5c2431d81a850f8d931cce142a44b6f999f9793e9a1cf9eb651fa42e54a2ceadc749c0ff87439382efa8e2bb9b7dc610ad4ccac0775618d73a499b76510b7e9de69256e9851d357305f3163073cfcba36e21e754b920887774556fb406ed6f0c7c0ddddbefcca98ded34b0b06a693a26f9ea618c88d8f672aec01f7c6982634a2acd84170017c76f133780f107c48dd9be8aca83715eeb6e71a4a475a472cece88d8e3210aaf1c71c6904d6eb4a32d6303772f4b7ff000c0a24a9fb48877e8c7dcf5883207516e8cfafd33c8f6d2247e5963e67ec53dcdcf8499cdd997ffd05f562b2deb1b9054eacba7002c4ea9ceba01a97079e74aeb86c08baa2345e05a4f1bad30c989219f2a32594023f76b27fb64a3423cd7abfab61d855aacde3fec6a789aaaeb5f3d24317e395d0855fcfdcfd0649d09c1cec198914e6a44b1bec07a2c8fc4bfb5a6e2df514f62d936bbad9ec4af221a9f3d23a9ae45c8cb618347191cf4f7fe97b6a9ce491943beeb4f030b5844b2475f2fb2cb28eb6a525113596a191c86ca88d9147bfe2fcbb7b83acc7c60df37dd7a68f1040a643e9f947437aa2694504f437588853891692374ec1b0f9271f4f7e4684c2699811e6571c4b6b90b08f014dea22cb2c4b1c0d56a4f4f487b7274b027038ea0063e9eda3a53523cca599038765a7c82867a1a0aca292a1ad5344dd0165f3e802ab85e79c0e4019c1fa7b8d10cec2066f5405d148d24b39d97a67c1afb4adab6e6cfb76cebbd1f9d153914d6f9a9ba1550162489589e9e9c9e1bd39cfbeb57038d90910ccecbb8d3eff009583d27d191495c461db527515fb2d457c76b782a2a36fd600dc860cacb8f42083ade7619e7578580c8c8366295fc7cb2c24f4daa5900ee4498fee234bfa576c78f9e2985876b10edf68da289fa46dd5404e16492738fa70173a26e1cb6f9c7cf14a7c45f62d5ddfed248a3aa1b447228f54ea3fe9aec8eaddfea10fd0b0dc3520affb4a6f69c936b8edb448ac789282495ba7d3bc83d3d71ab4c642076dd5ff0061f84b7601c7ba29e0915cbed23e24d1533d7c9b9edd0451af53b3da638e341ea59ddf8d10185cd4f750703206df4e545e61f1bfed75e2f78e5b72e1e18d24d1ff00b2f592c66aaa66a15824acf2640e98c72885d54e3bb60671db4a9a48987b3f94a8f08f90f645b79b2c2e2d892c0b4f25d2a48129fc11a7b771d47f70e3beaa9c5b4d43468af33a3680190ebb96abe0bf88177f00f7c517887b0e968bef2a159232b5713cb14d13a14911b0c08cab1018763cf38c6a99c43f3024e8b48e061744630295dbc97af47db9ef5ba2abe3282aaef452b31696de64a70918c70b19f8725c0fe96727d719d69458ac2491d1cd00f8fe565c9d10f89d506a125bb7dae3c4972168ee75f4f8624b1ae80647a0c7c3ff00fdfdfa7b65c08fda3c8fe52be81dcfc7f85e60aff12b68d2bb52d09ac69d4962af4928550064b719271eb8f7d79d662314e05c40f35b8fc36087643dd5dd44055dbee17189ee95b573d4c719240f84955620c4f0aac3206073ea718d539310e99d471f55a11e159876671f6baec4ac4d4f1b51d7b4512b3a4894ae4b7612752e32093d877e47a1d245684d454db5564b8540a1ca2e2de69e4d3a1a76a68a96a8bd346229ba29a44278073923fbfb13cfaeab0153571d55f7c9d9a346885a3ba8f2cd25457b7c6798447254d248a4803f09c0e9ce003e839e346f8eb722dc0a4367a0cad37e23e7cd1153d4b9cd3d13c81f0cc619a96407ac609c1e9fc3f91ce0f6383a16002eef44729cd68fd46d45592f3476f8692177a88e18006ac66898ab480904124749f403f2c8cea646979277e8911e56b40ae9aa33e128e2b857a5ae68608599e734f330103028ab9009f90f20f1c1650783dc2ae73467e5c5112d639c19a2694fbc370ed9768a9ae8f35b2221444ead23460e390bd24a8c648030320fb905b1cef032829334314873513ea7f1068ebaad2dea2a1eae55629e61548c91cf0cc83d3d0fe439d3beae523313441f410824104a9a6dcd594ee6486969677c0c2b10c41f6fc3f9f6d47d4bce84aefa380588f54a66f11b7cd2a48d05922840e418e262338e00f7ff00db4ceb5ae3aa59c23180fe52ba8f10b7855ae6a2aeb23040c7954a63c9f5ec38fdfe9a2ccd096d8a868ab379bdd5dd608daef1565665da48e3aa8da4452a38382300fe63f2c69ad90b490d344260ce2af48e7ac86a251745b0d434f524bb2986424103a7233c76f4d136adab335913835ddb2db9f9f0206ae8e9677557b5572b28500471c991d240e3d71ed8ff00f7a36c840b3825ba36388a850496d99f14f2d2568684820159830e0e030c8ce47bf7c0ce753d68e1e8a0b069b9451c3725aa4963b554a98cafe28dd0a11c864c37047fefc688b9a056aa054bb4b2d0acde22ef488b53d552c53f4a8e97aba3efcf70c8013e9dc9d55918ca56be4acb267934a0f1094c5b46ed48d14541b9a8454a282ad554492e581c8c9ce318c761f5f7d65bb1b1bea5cc34e0569b7a3a4690d8de2bc47cd8994b5be223d753da1f75d8ded32c4ab3cd152224b195423cce8242b2e48c00464039393a96c986730b8b5c1d54b7e1716d9051cd2da78d69ad39a8bcfdf0d755ac6dd163140b1318e48557a4b1c0f98606321483dff10f6d419606b32861ad5363c3621cfcce78cb44aa7aade5556ea6341bcecaf5a641f1856359236e9c16e9c1f9579c6318e0f1a607411bce761a6cde95d5622489bd4cadcdb6d6e2809e6deff7db4d47b8ec9514f15546228fa8078e1098eac1c063f9738fa634e0fc388a858e069ebf3c12648f14662e6bda5b5f4a2670dceeb41575de65f299e427312ac2b1f5b0ce09c82385238e338ce904b1ed072fcffaac64731c5a1d5f0f9b17e8aa498e757ac4a86901f304111844ad8e004ec08257d7a3f2d1d6b7a79aa8f6bda29aa3a9419aa23999a33e546d0f96cbf81491938270dfb791c60e85cf0053c51b6271ed3b4fb2fd25649033cd6f133a4f3f4b4f592996685402b966e7ab9c77e71eba8147d9c7c941ab3b80f8a8ee3b8a1aba741550929d319eb8cff088fea58e3f10f5f7f7d488c22331041aa1239aae0b849326e0aaa90c3b544cc404c640e391cfa8e467d7459835b6144bcb9c9a9af3460ba48e224968d1faf21e4f2e43d381e9d4707d3dbb9e78d7090ef41f4ecb59086ed3472795887e504038e8e3fd3f2d1759b42030475a289ee6cd0f920534654a9eb490b13f98ce3b688486b750626914165cc97e9a10040d0a8404308ce19b231ea4fbe7535693742e889bb485cd4ee4ba562068ef34b0cad000f14949842d9c1e92a09cf48382c7d7f2d737ab69a11ea96f8e6754b48af24b6a24dc75b10cd4c1281ffca915431fcb03dbd75659242d2a9be1c453b4974ab7a50acc6a18492040a9824b633cfa8c0ee4e9dd6c4744a0c901b85c186f6cbf2cb52107af619c0e47e7fe9a0ced28f92d1686d3b8696354a9b5c8f1c84a9912573d4c78604649fa63bf035e79ef8dd769a792f6d13decb3aa7cd416fdbdb92e151550ce28fa6917a5b358e648c0391d60927b7b8f7f6d31f344c029b7c95764ae739d5d96db6e6a2936f5c288ad52c56728f3740e8aa27ad8fa73c7fa6bbac6b8e5155c26eafb445be6f438db3734bbbcf3da204a59084434f175ac84024b92a703bf63f5d1f5c1cc001bf14912359292e141c06bc6cbacfb6d3cb8a4aea3a593ce2d1ab34643997bf4a82c58f0bdbb9c71aeeb88a8074f9752446ea17d2fe1e481160884903435f1c9017e990e1a54671d80607b8e38d1f5c48208a7a2173454161a8fbf8a2db6ec4cd254acf397080b2454b2f2338ef803d49ef8f73a813134074e681c00aba86b6563b4786b71a9a5f88bb3d4d2d31f9564f2194c840257f58e3207e47be7559f8e634d19af356198691d775872d7d54b73f0a8db6927ab865ae9c0e9902c68af290c40552b9e9e79e4b0ec7b6a23c7890868fe38fca25bb04e612e773e3cb5a20c786b1b375c7749d1e29921ea5a6253abf5a36e73c7d471a2faf2050850700295074f9453b786d0454695ef50f5a63a84866011d4942792a00f41ce4ff7eb86309394592dd860d6890826f7514be1fd253dca6b3ad44df129119a58de40a4460e32a1864804609f765f7d4b712e2dce40a151923692c04d69548ea36c50c128896ae43c74c8c25e92841e72a5783e9ce3d3561b3178d12248c348a79a2edbb164be55c9159a179fc89fa6412346bd39ce0365fe99e01e3fb81f8810b6b26d511b04aea33614555785f79b72ad3dc5a8a30f208421a88a5c757e02dd01ba32a09e4fb73cea198d8a5ed36be451cb04b10a380ddafca28a9f634559175c1292f19c3c4d200f91ce30aa067f6e7f7e88e2729b8f148ea8bc6b747525866b679518ea8ea3a4b753052c187d3239ede98fdf9d0995b256ba29c92328d6ea8356a7b2d3d447feced7159894f39d999c3e727a5c0ea0783c818c31c9ed8648e12d0870aa4c6c9185d9984fce082ab9abea423d4d0d115e90555d57a8679e41c13ebcfa703d0e783c33ba4a7181cea66a26f2de2a2dd532476fb0dbd147cf0d52c219a0c8e5e3eb2ddc804939e54600f5a82164806779e5bf9d16af59246f3d5b3c777115054b15d6e0cb24d0dee2892797aa45822544670aa09f9029c923e6393924e7b8d418e3140469bf778a634bdd7b509f5f003c54f4b4d2d6cc52de16295d9490519d481d8282e17193d873fb4e75ce7802ae36f04220cae3940d7683ee69e499ddcdea82d92477ba3a2303c651e0ab84059a3e9c639c938c9c007df9e74a8db139c0b09e60ed4533ded616bf291b41a6893db7ef0a9e9aba6b753da68a91ccd14ca9fc14f84c1662e70aa463f0e3381dc0d31f91872b9d989f4f2f74a89ce98670cca05eba03e68ba2be5cab238e6fbba8e5928198d398ede180f95d7ad06002701b040f5c0f4d0b98c61ca0ebadd3d99e5153b34fe1689b3c0ca4973a386a0e7cb68a783a474b7618c63a4f3f28cf041c6b2f1048ee9a2d6819186d1c2a55ea5d8760af81553cca48c9cac344ef088cf1d270ac42f48cae40039edaaacc5c8cd6879dd35f8389e28016f2247f0aadbebc38dcb658bef6b15feaebe09658daa52b2638488302e460a8ce3f091d8e0b7033abb84c64330c923403b283e78acbc6e0a7886785d51c7e792cd6bed9432d61829f72495cbd0c1a075770b2c8c3e769032a80882462a08661d8e78d6a324706d5cca7e070e2566ba373c90d7135d94da76d7828a82c3b36bebebe863f2e58e491248563af5011fa7ca648d416c85656725f233ce0e41d4ba69da03b4f0f1bf3d2c94d8e1a96904eebf87a7150dd365539aaa7a6373455a50ef5b32d646a4425400ac78c100f51271d6ca7009206ac61dd24c0d07254f112c5870d69d76debafcaf3515cf6dd2ed9b2996e1b92df5c932472d11acade20a772c3cc7a709d5f374310324e14f1903575b0bc76a9759b24fd61c8d75b8a52d76b8d9649ad735de9e86d1728c436caca70c056a4b193d24ff281caa8cb8e0654672354246c721cc066734dc6ea6ddd4e1aad689af87b15ca1d6040d6a34aeb5e29a5a2e9574d6d5bafdf946a90744b546108b719921215142b60ccc4284eacb1e08eaefa4b99d6bcb434f8f74576f01b68ac02e81a0b9fe5de34d94da76554adbb21bc411dd29682b2816b12615b49589fc61640a0c6669107287e5241cf0ddb38d0f506225a4834a508d29c06f5c6473c090022b5a83af8f0deb8adaabd5c68adcb4b413538aba606549a9da494b83dcbb01d3128c81ddb2460800ea018e324935a71f6de535b879676b5ad14045edf2c9bd9e236b869de714b4f23383342d1b2334792bd407532af6c80382783cf743ded909cb71f392b420742036b455fde553b8d658c2414b7289c068e3102ab46bce0921f9f6e303b7beac61fab23778ff0a8cfd6b0e99872fe55a6f574bcedbb6d151d0ed5b0098a949cd74cb13bc6064748fc6a7a4e0925401ce4ea961e08e77baaf3e02bf3d56ee23172c51b72b0789a7925545053cf446e575a08ed5316f326a718902331380304b13ea73e807b8d3de5cd7640730d8526339a3cee194ea47fc475a773da6d8d5d09db7e72490b410d456e0146618f3563c74f50e700e7ebce82461765766e74fb286173c9639b4b5aa77ed554dc551254d7c2b457b6aba89da2841aaa5420fa109e5e42f1c76f5c71abd0dd86ada0d6ca9cd098de09754f1f9655bbd6e3a596eaf64a3a6a2adf8395e199a9d598bd43af4920b02a510ab7515fd738e42905f1e1f2b33b8915dfb87ad4fd9549714c74a5918069ad379f4a0db4dbc959f6cd7adb6e6d669a5af8ee550b0f53a46ce91152c08efd3823a58600183ee754a6617b338a65bad1c34b924eaef5345bc9b5cd668aa16aa668daa5a1acf2467a4215009fd9c73dc06c7a6b08bc483b234a85bcc691756bb1d599e54113141511b0eb04633c82bc9049faf7d5079b725740b54a7b7ea63596354ba388f05fa8a2b15552a57247ae14107d08278e71a1865cb27652a48aaca15936dca5b7edbdef7fb3cd496f16f86a6396231d363ae092156048c7a92ddb3ebe9ad796674b035e1c6b4fb159b140c8e47b7280acbbab62dbaf16741b72e93edf9a39be25e7a0890f9c319e960ddc6704608edebdb4187c73e1755e33734bc57464738001cbcbf0b1ade1e0c5da8a91ae96a10dca9a2984f34b47008e6f343193cd64c1c952c5ba813819f618dbc374c090e479a73d392c4c5741f53db8c5796bce8b2d836e5dee52d42d7cd3c8551d9aada6562b9030ff0031c338c0c67d546757df8802849bee54e2c2bc0200a506bf35569b56e4aea5a7816aad9057bd1aac10c923a75a055c191830f998905be5e33d86a9c9033469ca0eb4daadb67948edf688de787c364a6eb2525d772bef2bd2cf4d75b5e52969e589169ccc50794496c9c921be6192a49c0f4d5868cb10819761d4dc9e3a782a8e00cc710fb3c69a015d9ccf1bd10f4b3b53d55caaeaa90d49b847355d507949fe387023088005646e01eae92001c718d2e6264cadad294028367e42b58667535752a4824d49ae6d94d943c55c76eef59a97698b5deea9add590a9491e9a9244120c9398304e32b8009c7be06b3a6c1d67cf18a8d953f75ab1e2cb70f967b3858d052bc954ef7bd29afbb93ccdad765b95d29d24a682ae79079748640564e94c6589500f495c6541e3b6b420c1be38b2ccdcadd6836eebec59789c7c73cb5c39cce028093dddfcf92b5fddfb80434d738e0bdb0ada68c4b489fc32078c74878bac848d31faa3258b64e3a466b678aa5a48b6de77bed278a7b59897f6c56e05b67856c0236e3437164a8ba4944f2d746c129a39241206238390073cb023b8cb7b69514b1b486d4e53aec567138792b9cd2a37dd719b85750180d05420ebf366559445184c60e430e5c10792718238e3519981d407dfe04d2d2d19c6df0e7e281aab05a6929a46aaa34a7f2e479fcf5958b471823e4742483fad93edfbf46d9cbacdd74e1e0a0c194e63ddd41da39fad782c57c52def784aa96dfb4d6e10dae8254f88b8c74cd0a34ce085f2dcae5320b0ebcf3e9f5f4581c2b4343a5a1711a135b0f9a6c5e57a571f23896c350d06e40a5cee3efb56712ee8a9882525b818169ca08270a52428a09e704e0b3312c477206b4cc4d2ea9dbeff008587f532368d6da9e76aaf6cbdd52d3b87c3eb7d4346915f685e3a79a6702333986295559cf6ce64193db8edaf026132c53386ad3a70a90be9a276c3240c77ef06878d015aa5a6a63de3b6299ae7415142cd249425e65e992223ae38ce3386562d81ea4303edac87838794b41ae87dd6ab089599a847ca21f632cf1d123cd564ca923aca23903367b647a67a94e71c1fa68715d979b6c4d82ec5a1a57564b154d0ded625591bf8b4e074f991941c32f60c082320e0e41e354cb5ad70737c7f84db9a8f258d6fd9aba0df361dce62ca5652bda6e6d1cbd03cfa63d4a5973c655d88c7a63db5b9870d114916e351c8ac992a6564db08a1e6168d6a8a0aaa465b61919a6010260b166cf6cfa0e0e081fe3ac973b2bbb4b4b28205115614a3095128e8aa9a694c891b3f498c293d4ac0fb61b071efa390e81280a9aec59678b5e0ddbe99edb73dbd6ccb4f56227a33d71d3cd3ba33019575081ba48009e9c9519191ad2c0f4938e66bce835b120795d51c66018f0d006dd0569beea9b62b3787d7ef36d8f6eaadaf75a59bcb342f50fd44f087f95ea04139ec464601233ab934d888487021eddf4f1d8ab4384c3495650b1d5d2bf944d4f84c6c34be6db1855db63e950f2bf518490787ea3f267d327a4e460fa6a5bd246722a684eeda83fb7c7856914a81bff9496b2c966a0b15452cb4b56d73789e26a7a284cef1a83cc6f270a57271dbb9381c67569b9dd2024daba9b78aa12be3643468ed69417f055216f14b4c86f09f0b2a2b748a80c212181118c0ea2a095c1e819f5f5d5c06ff00f9dc70d7e73599da7372cba8df5a797e1734f70a2d921ee56da6b62b7c0bf228e4c7c67683ca540095624e43f273dfd94f6bb14e0c7934aefd9b6bc55a8c8c0b33c40034ddb7414e6adfb1bc528eb6d66df3cd35354d312646343d224cfb0eae00ce3dce3d354b11d1c03aa2e39fbab986e92748ca3bbc3534f652a472452bb5e1aa22643e748c30a160cf4e5bab0179e339fa6924586515d9e2b4badcce2d7b80da29bb8acffc4bf119768de86d1dbf433dc6ff005691111ccca90a093254120fcc7b1c640e464fa1d4e8ec0fd433af95d460af3b7d963f4b74a36093e96169325b90afdd37f07b70eeab8bd35eb713c8f5104ff09511c83a0524d9e9eb2a7d0a9e41c80541f4ce91d250c2c0628b6dc71099d1334f2d259f516234a15acf8f1b1a9f71782bba2a2c14b1c9785a135724ee5a49a58d6459268c17ec1d6327df2a318e358fd118b7438f89b29ec5694e7607c168f4d61bafe8f94463b54af1343523c68be7744eb3d5421dc85623e651e84f719d7d35eca5c2f9530e670aaf606ffb5ddaf5f671d9fbcec914d5970dab76a26658f0584203a0c81eb864040fe88d78cc1bdace93970efb0783e76ffabe818e6b9dd1b0e26315730b7caeb6cf0d2f94dbbad572ad8549a7b81a567815faa3a791501f3101ec58852476e09183ac2c6c070af6b768adf7ff00c5e8b092b712c2e06c696dd654ebbde6b767789f74db45e48e1aaebaca595987f0808599781c1cf532fa1e0e7565b13713866ca35163c362ae712e8310623a1d38ad96db545a8682449710b4fd7d0cc7e4565c8033df0c4707d0fd00d633876883b16b35d60424dbc366d3eecb918282534752218ef0e9d6424d2c6fe5162be83a0807d8e33dc1d5b86631c61cfbfedf754a4676cb46faa676da1bd40b6f4a58595e9e2f2e681473138fd60ddb9f97038e54e90f119a9255b648e140966dca3aaa0a6928aef318a74919a1ac23f8399f25b24039404119008e7abb6393c416bc87334ddb820841602d76aaeb2d05ceef69afdbd752b1caf198e392221e2595183c72ab0e7e52573fd4fa9d54ccc89e1ecf9b08f9bd305641f3c1617b9f68597c429825e21968373d18313cb03b42f14e0f4b80c38c86e41e463d083c6e61f10fc1d986ac3bf42167e230f1e3002eb3b783a153d82e977da7594b63de4f497082444a65b8b45d50c9d781d35511fc21fa7e53f83ab3c83c6b9f0b66065c3d4117a6dff53b69b76a06caf8ff00f2c451c08a5767fb0d95f25d2f5e02d65aeeafbbfc2ebd57253d4baa4d69f8ff0092194312d869065e324602b678cf38d3f0dd3024608318d078d2ff00f56662ba20c2eebb0ae2386c1ef459dda76d6f7b75e2aa3dcd0d0ad3f94276ac69910798d9c9e5b824900838192319d68cee81ec06026b5a52ea9614e22390fd4814df6d530b9dd2dd65b2b29ab9cdda97e44f830b3083e6388c4920f950b7af182188c019d25b0991f47f778dbd026bb1219183177f853df62a0dedabaf32fc7d3edba2b3b48cc5c3cccf2c8dc65895c2904e4823df571a1b19cb9b32a947cc3396d0aebe2478ba3cab75ceb28269282e94f522820a845695487f29e691070d90cc157b0e7d74581e8ebb981dda6915234d2b41ee978fe9411359216d9c0d06dd6953ec162f43b3375ddeba7bdd7552ad5bf9554a2a642d3c81c128588e10e0260311c30c763add9311146031a2d71c179e870d8899c6579beb7375e8bd81b93ef2db351729e927a4acad75b65779e854354060124c7a065217f30c076d796c741d5cc180d40b8e5fc2f69d1d8833425e4509b1aeff00e57a3b6a475c9436f8af52e1e78d523e993e491d3820f386ea46cf7f4ff879f3188cae24b469aaf43102d0012bc0bf699f0fea3c3cf162ef43f75a51dbebdd6b6df24284412248a0b7967b70fd40a8fc278fa9fa374262463f06c79755c2c6badb7f879af97f4fe0fe8f1afcada34dc534beb4f15e81fb32ef096f7b0abedf553c534145511cd54922061e5060ce597d7a4024639feed79ee9a84458a6c8db1702073d8bd8740e20627065aea1ca7d13cf056e50ed2dd172d9e26cd21ac93e19492ca230aad18049e47492171e8baadd28c33c6d9c8a1a5fec55be8d2207be006d5b723708af1da8e292e36bde70ceb37c3f9b6c9ba070b2c25885ef956f2a451f9a838efa5f45bfb0e808dc478fdee8b1ec19c4c0e96568f0e7762d6eda486b2551f28932c7bf382c38fe8907f776d52c5c3965b2bf8598be30ad77aae92d7534771fe56282a1e86690370b493a85693a87380eb1311db19f6d2e16f5ac747b751cc6cf2aa398e473653a568791dbe69e6dbdc31ddc4cd4744cd75a798c53d3d44de50629274cb838386e0b818f5c6abcb096f65c6d4aa3125bb29d56515152c6c6a29c28843cebea0a679c8f42013c8fae90da9b232e3aa65053490c34f554418c685485eac650900f3ea3e6cfb7034a233128faca58aa26fdd996b8374fdeac9253d45e3f855a883f01a98c1186e78665c0e3bf9673c8e7470f34862cba86dbc0fb2a7958e7f13ec93de36c5b7785995e96b1e8eed491d4452488bcbabaf27a5b82c8cb1be0e41e93ec0e9d0cee8090455a69e9f9150953479f434371e6a93b5b775ff699417134d5102ff1714814e6384614c91679f28b1e633d4464329fd5177110453ddb6e3c75f3e29504b2c272bb4f971f8564dc3b6ed3bd20a7b85b21821bb34aad52b248637aa450486423869001804f720671aab0ccfc312d7572ece1fc264f0b676e66815f9eab1fdcd4b4f5f53251dcd4d3aa48c121a9a46a5746c1cc843e03b138ce33f97aeb5227d055be75af82cd7459aa0f969e2aa7351db61a75917e1fe57f2b34f301c81920af5123b8e7b69e7311555fb00e5a8f0593f8a9fee9b1ff00e96fff0072faf4384ef4bfe5ec1794e94d20ff001f72ad1b6ff97ddbff0044b7ff0082eaacfa339957f09fa927f8b7ec1691b3bf40d47f528ffccd6462ff00507fb2dfc1777c42dce5fe63dbff00eb345ff71ac067ff0043ff00c4fd96e3fb8de7eebcfdf6e9ff0075d8ff00dadc7fc61d7a6fe90ef4ff00ebeebc97f59f760ff6f64a7ec71fa3f73ffcb9ff002f4cfea2d61f9b50ff004a7e8cff00362b36d0fd3b68febd97fc8d53c4fe89e6ff00b95ad86fd46ffa7d95e3c45fe6adff00ff00ae87fdb47aa584fd68ff00c3dcab38bfd193fcd77d99fa1e97fb0ffed47a4e23f53c7dcab785ee2d16abf99b57ff004f6ffd29aa51febb79ab337e91f9b976d99fcefbbffcecff00e547a3c4fe98e41261d5dcd6af74fd0f0ff66dfe9acbda1346d506dffd096cff0095ff00c06a5fdf299277571be7f99f45ff00389fe53e8f0ddef0295fb966bb73fdf64fed0ffe86d5eda10bd53b747e906fec64ff004d68c7dc3cd521df1c8fdd3fda7fa4eddaa53e8e57a3d020bc69fe64de3fabff008ae87a3ff5c21c77ff003af2ad07f2327f6cdfe9af4f88d4725e4a1fd33ccaffd9', '2009-07-20 14:30:51', '2009-07-20 14:30:51')[0m
+  [4;36;1mPhoto Update (1.1ms)[0m   [0;1mUPDATE `photos` SET db_file_id = 2 WHERE (id = 5) [0m
+  [4;35;1mSQL (122.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 862ms (DB: 139) | 302 Found [http://localhost/users/1/photos]
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:30:52) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (5.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (2.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (0.6ms)
+Completed in 121ms (View: 33, DB: 15) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:30:52) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;36;1mPhoto Columns (37.0ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;36;1mDbFile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (1.1ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 104ms (View: 1, DB: 41) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-07-20 14:31:19) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1"}
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Update (1.0ms)[0m   [0mUPDATE `photos` SET selected = false WHERE (`photos`.user_id = 1) [0m
+  [4;36;1mPhoto Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') AND (`photos`.user_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Update (1.1ms)[0m   [0mUPDATE `photos` SET `selected` = 1 WHERE `id` = 5[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 115ms (DB: 24) | 302 Found [http://localhost/users/1/photos/5]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:31:20) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Load (1.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;36;1mPhoto Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `public_filename' for "#<Photo:0xb70bb528>":Photo) on line #2 of app/views/topics/_user_photo.rhtml:
+1: <% if user_photo %>
+2:   <%= image_tag(user_photo.public_filename) %>
+3: <% else %>  
+4:   <%= image_tag("/images/rails.png") %>
+5: <% end %>       
+
+    app/views/topics/_user_photo.rhtml:2:in `_run_rhtml_app47views47topics47_user_photo46rhtml_locals_object_user_photo'
+    app/views/layouts/application.rhtml:25:in `_run_rhtml_app47views47layouts47application46rhtml'
+
+Rendered rescues/_trace (284.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:32:32) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (2.0ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (0.7ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (0.8ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (2.8ms)
+Completed in 198ms (View: 39, DB: 10) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:32:33) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;36;1mPhoto Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;36;1mDbFile Columns (38.8ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (0.9ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 118ms (View: 1, DB: 44) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-20 14:32:37) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;36;1mPhoto Load (0.9ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (2.2ms)
+Completed in 228ms (View: 146, DB: 7) | 200 OK [http://localhost/users/1/photos/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:32:38) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;36;1mPhoto Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;36;1mDbFile Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (0.8ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 124ms (View: 1, DB: 7) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-20 14:32:43) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8549-2>}, "commit"=>"Upload", "authenticity_token"=>"qQmJIaIkeyjx5CfhcadoHNeAmVWIS1kmfiKM5BOHhyY=", "user_id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Columns (6.1ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPhoto Create (1.5ms)[0m   [0mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `selected`, `user_id`, `parent_id`, `filename`, `height`, `db_file_id`, `width`) VALUES(114852, 'image/jpeg', NULL, 0, 1, NULL, 'Toco_Toucan.jpg', 113, NULL, 150)[0m
+  [4;36;1mDbFile Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Create (1.6ms)[0m   [0mINSERT INTO `db_files` (`data`, `created_at`, `updated_at`) VALUES(x'ffd8ffe000104a46494600010101006000600000ffdb004300030202020202030202020303030304060404040404080606050609080a0a090809090a0c0f0c0a0b0e0b09090d110d0e0f101011100a0c12131210130f101010ffdb00430103030304030408040408100b090b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010ffc00011080071009603011100021101031101ffc4001d000003010101010101010000000000000005060704080302000109ffc40044100001030303020403040705050900000001020304050611001221073113224151146171081532812342527291a1b134353773c1333675b2d10924436282b3c2e1f0ffc4001b01000202030100000000000000000000000304020500010607ffc4003a11000103030203050508010305000000000100020304112112310541511322327181061461b1c123334291a1d1f0f1071562e143527282d2ffda000c03010002110311003f00e3cb5ae3b82995d4b74c92a8ef0712a4a870411c839f6e3436b9c7654b56d6989c1742d7ef4b8ebf1ad4ba4b08973da96214761a427129ec93e6f646d0a5127f678d301a1e35955f451b6763f50e49fe13d54f1230b8553592a9482d37116508714492778edb323db43313cbf7b2c31b74dd16b4fa94f42bb2e6454d6e0a6501b610da5e8ca4b6b78a3901490473c1c9f9ea3532189dd4268c4446d70c9caac50fa8b4daa3b4df8793495fc5a42ca9bde5bf9e0900ed1ef8cfcb418e68e726dc909e4b2d7e6b77502e77e2dbb2e6db94da6d4e4b121094c34bce02fb1b805adb563055839092076e4e893921a4c62e872ca74970b299d7d98d526a63aba3a5a5b2a53682e256e65cc0c286dc1da9c0e7d4fcb9d2d231f20d208dd4da21647f682ee3f1fd3ea57395db44bed9449a8ce43adc64ad4d2e54459ca13e9e20277a51e80920678d24f74b03ef503bbd46ca2da96b0e86b6c0ff0039ac5d2ba7f5369350acd6ed6b29cb863c08e04e6f78184a8e525b24e54b3cf090a24678d3903878e317f8a3cc6399add46c8f512d91d54add5eb952b62b50e55259db3e9b1e53318a4f2123c4741c608208233c63beb4f797bc93b8426c6f07b260d43a8ca3dd2989575b2f506a746557feef961513c5407d319a2090ae484923b019eff9e8add6f36230907649d26c462df34d176566eea2a1b928a64dab2bc64a5f714ca63428c00c6eda7016e15606d048e7b9f584f2883bc415386985438e6dfce690ae5ea15b56c4b934db8a917445915482a88f2a3cd498d1d970e56a6dada856f59e0e4f0927be71a5195ad999dec5f7b67e81301ac8403826fc863d49fa7e691ee5b02c8b823c195d33adbf35b690a53f0dd5a838da40e561a294edf4ce073ce49d33da3246fd99bdb71cd350f1174ae3dbd83797c0a314be9c53dcb76a0c36a692f2e1bedef183e1acb4ac67e9907416c8758bf5098f790f7020e2ea0b48b7a1c6b21ea7c278aa7d76a34da7c274e50a5a52bdce94a09c809290738ec539ef8d5a4ce2250e3b004ab57cc4c9ab900495736d3029d9208560e01f71efaa7048dd533754aec20570cf86f03b12013e99d11cec264599872499b3005614738381ceb6d761149d42ed4d741a0d1a1c19c58a248a955e6b794c809258a7300e33c7e2715efd920fbe9a6cad0cf8aaeaad5207341007cd18e93dd7558776d3e8d24b4aa5d251226202ce487dec207d3094903f78e988aa006817dca952b1a29f57557c9971b55eaa51d345f8f9afa1f585408a53992ee0ed460fe2e32ac03c0049e3447d431bdfd4309295ef6bf4305d003775f363f582a9d3cbd29f129532e08f1e43cd445193f0e568c32d2d430927093b88f2a72aee0674bb6afb784bb4e13cd6b8c1daec4725fae2a954ba675aa555ab662d469d52dd0a5b6d77888209c24b676a95b0615b7f10181a04718659ccf51cd25239ee1690dcee3f64d369deee5c521d8ca1268d48623a9d2f4a5ee449714a4ec602b203781951c6703009c9e0f0fda5ec2c16a46d802e3dee83ebcaff00c29babd7cdad224bacd2df7aab331e21894b4e4378c11e2ba70848e123728e06884c4c758e4950d2e22c2fd54f2bb74c37e84aacdc76e47b769e84966425f5b939d794ac84a1b4a13b79239dc5201c77d0a699cccb5b70a54f1473923586dbcefe814c6175861d0e86ab52c1455e8919e538995524a99766480b20e5209096ca794a540956d3c9074831ce8dba1800175631c74d159e6e48ea05bd05d0f76e58b6ad35badd1e2489b32a4df8511eaa81e2b294af0b5a50ced40dca2a4f3b8e33ce49d6a98e995c718442e6d54ae26e401f01e58184f36f573a908a6ca764428e84d7d203a910fc2e49d89710b410518f968324b334b9cc3aaf6f45cfd4451b09319f453cbc2ddbfade69d9951833a445f0ca254c54a2f21c493e548c9dc91ef9f5d57cb1960bbdc9676337b21d67d26dda8c6911d6d2db90f381d287525415918c0fe1a8b2aa588e8972391fdd58d0d6803b39567afd1edeb727a1e15e16f2d9505a1d2bd8924a707692a1ebc607bf6d583637c8d69885f2ac6a290cb186c43739fa26ca4550cbb764bf2a7c494971a0c7c5c27ffb43273b49c72950e524fcf4463656bbbfb849c2d7533f45b295e57c3552652df4b1199149965e6921b036a4b6b4109c76fc493f3c6998dc45efcd37238b1ae1726e3eab54f089048ce07beb659a902299d1940e75096eb20b6e124f63a9988596e4a82fd92854a8d2c3a5249041ed8e341b01846a696c3bc55b53697c0d34f8cd4c451823c453caf336a70676a36920ab273db3d8f1a3e8d0349518647105f6b7427f7416caa6ae2d719b861b34d5bb288438da273654a4afca12b42d5fa3527cc42938e41001ce825c5a439a3039f2cfc90278448cb0391b0b59741d726cdb250fdc76b38f52db8af8a741769e5664c879c4840094100b892a50fc394f6273e9a99f1c97d7b631707d7fb518a99c185ed69c6e47e83fa4a1068f7a5bdf68aa854abad1b8653d464c94b7302aa735c68243654a46f4ec20f881214a1b473c9d1991765006b5a2d7e7d15b88a27c218d7119b5c839f41d7923fd5aa622b74454b7a9ef454b8a724b8e7845c432421263b2d800ec528e01c797ccae4e4004efbad2916002526860803d8cef1ebb1f9f2fcfaa46b56722bde0d1a4d593112eb7b0bea485069c48c86ca4fe1079edcff4d18bf5c7a98721568796b6d647ebfd39b76a550a7d32e5f02a9e227cae84adb3dc02424f9491c1e42b8f6d488639c015a1552346863c8ba50eac5c4ed914ea674e58f87a8c28f217225b8ea772a420ee4a9273c8ce777ef0e381a5ea6f15a3f54cd3d39a82e7edd0f42a08b98f36ad8de783c1f53a5c0be55a889bcd7465a36a522c7e86a7a9d79c3665542e21f09416a4f9c214544236a4f6e72ad05d1b9bb6ca925ed24a811444d86ff5fd974142a5c385d27fbdebe86be3c965b8bb060a8848c903f8e758d84069785551421d23a41d54c2bb524d4587e04c8495c49082d2c28641074bcb1891a5aed95ac54ec91b62952af262408ca79865a6d413b0292900e076d4031a0dacac591b5a30147ee5933e6cd0e351cb81273e64e7fae9c8adc9590b06d8ac6d5c783f08fa148576280319d1ad7483e01ab52294b61f92a0af87560f3c6b0e12750f0dc5d6d9dbd0a2d96ca538f6d65f9a132cf18582254478e9615f841c6a25e792998886adb51894e5a10ea54925479d2a5c6e9464af6b8dc26fb87a99d299f504a69d6ecda93e8436d29b98fc97620213dd0b636950249ca548073dc93ce9a3532487afa7d3f75770c7c266235120db624efe605924750baa54ea750d76a44b51a8b0663ad38f310595c40b0d02a4b616eadc702779492404fe1006dc93a330bc30b0e0e0fedb2d4828449da30e00d85f27ccaab74b25562e0e98aa7d56aedc98e97b7b11e3b2d6d8ad83ca587569538daf04655bb3b893eda24748d9bed1dfcf3411c45f96c2d000db173f9a310ba67677561326a96ddc555a1dca1b54687549729c79684209219742890a1b48e0f71f31a9d3b23a961ecf6ba599c46798d8bcdbf2f924d6fabbd49a1459564dd34fcdc74c90861e7e437be3bcced5252ac6120ee6c6411e52391adcb3e96168df6fcb74cba9d87bcc38b1fcff0065e7685d14e84ebd4b9d4da74762436eb4ca0b59436543801473b493eb8e3df5574f348d718e4663e1b2a573656b885bfa60baa37466664fa9b2b4d1d720bad499382958591b1b07f5b691c7a8d354eed1202e3dd446b985a196c849dd4c88e54ab732a3312a43eeac2d415e9e518edf2c6a12cbdac8e77c55a52ce4c6037652efbb5e7a6a5b6b919e7597b04c997162ac370d42efea85936bd9346a54b759b56294c70da0ad25e073bb3d871c69492ae2a625f52f0d6fc4d823f06e13595d50f7d344e92e7f0826de6761ea5751f4d3a69d53bcedaa51add15e69a661b6969120f8696d5b7cddc73cea8e4f6af834576fbcb7d0dfe48d51ec5f11a691c240d6e762f04fe4dd49a5efb2b75025b6a288f4b583c8066a78fe035a1ed1d04acd70bb58ff006e7f4dd087b3d3c5bcadbffedffca997553ece3d43b62dd9d5ca9d1e2fddf4e654fc97da9ad14b2da472b56e20e07d34b51fb4bc3f88548a5889ed09b005a6ff002592709ab8186424103a1fdeca016c49a0579ff81893e1c97544a53b5c049fa7beba82c7b324242aa1a88c768e690165b93a7e1137e2233637fbe88c9ae2c52ada970c397d45a73b4c8ca0f3807006a4d76a394078ed1d7422bd292dc5187013cf0344d21314ecb3ae54f6ab5e723bbb63f2a1ac0d0559766d705fca7dc93a4a48595103b03ac30a55f0341c2ab23a695da0bad95c665e73700d3001cfd78d392134e2cc0941112d2977ac36cdcacbb4e6aab42311e7992969a4a79209484a47fd3bf3a4e5749a839edb5d6800d1a0269b764dc3d2aa4ca62727e229c8421d9f4e53794b6b1b41713819ce00dc3b1c674664b2437236e895130d7a404e9488ef42a3b7d53b767b6983396994db2c9276f9c8537b7d08c91cf2071a8c20d3b8cc0e0ac0dd3775905af5c6c562b6baa4e755263add65e2975277a7610908ce39094703d3075844649eced629964a5cd70bf2b0f5fe91f6e9b6dbf35c7bee85068b603650ae52bf7d676641c14b6a206565a73e2d9725bcb79b7a1c890a7d6d29adcb2a5e339fda1c73f2f9eaba46d532a4068fb3233f0f2512c719439b90977a894a52a9e2bf11482cb8d8594215b905bedb907d81c029ee34c98c0cb5314723a2776520df65279b7345b70a510d88efce7c15b7f103736848e3714feb73d93dbdf8e09a1a7edefacd805714f0f69207917039753f5f2e6ad1f66bfb43f536d7bc22c8ba2e98a9b6434e78d1e4456190af29084b64202d077ed3c718075e71fe44f65b85711a077ba32f5571a5c1ce246737b9236bf25eb1ecad0719e3552d86a6eda700eedd2ddb01ad000dff00e5750a7ed670a71dc2a74e03ca4a44adc7e63f3d7864bec2563459ee71f55eaecf6169983ba49f45ae07daa29e9524b935941cf252e9f61db1f9e953ec6d6c075c2e70b74247d50e7f61e22307f441ba91d6bbc6fb936f5b365c46ae49329d9afb54579b0f3139e6e22d4ca1e4abbb415951cf97725393af47ff001d51d7c553332baa24646435a5f973980bbbda4d9c41761b700d9a49b1b2e03daae034dc258d3135ae7e48693a6f61cf23037f8916be571bfda57ecdbd4efb39d5a91784fb69ba4dbd72a5b763a2049f19aa6d43c30b7a1950394ed3b8b7927291804ed3af79e12e927a7732524e9738071b5dcd07bae36b5891be0673617b2f3daf7d39901876205c7206d902fb8becbe6cfea9fdf9435a2a24fde11804ac9ecb1e8bfe583f3faeb72d376671b2e42b28bb292f1f84fe9fce4beab970b0fb492958529407afaea01ba4dd2d1c643b295e53ee2995952b239d12e8e486e527bcd2a4cbda07eb7ae8cc18ba939f665ca65a4d21b68293b3764675309074ae2574574aaf276eaaa4553d2d9f1f715294a4e76e3d86b703ccb25dcac2ae3d01b654cba2eeb128d538f5abc4459f3a0052e1b6e80e3885118ddb7b057b7b7cb4ccd2451d9cfe4960d05c0d94866ddd07a877054a4fc0b6c3737caa8e7f5d38da33f97a69065436a9cec592554dd126ae4504a7c699d3e555ac16dd4bf4e985b9f0d5bb258de485b647a76074ad448e8b541c8ad01a8ea28f512df895489255e18716eb4a69b2477e0e55f427b7c867d75a89a14c8d0403e6518769a2125b70a76bc12376c3804e39fe7a3ead02e1681042c93db3362969d6db4f19040e4e9696a5edc211241b04af1d101d8b26d3af6514aa89250f8492a83208c25e4fcbd163d53f4d2d0d4106ced8a663d57d5d124d0ec622acfa67c58cf784a2c07f921612a3f84fec9249f9e74c3e36ce00391fa2b9a7e3355c3584d0bf439db9006a1ea4123d157e8f6174ff00eeedf36d9a62dddbf88b0324fbe7beb5eeace8a2ef6b38f35f76d6497ffc8a45bc2816fd39edd46a5b3192785164a93feba04d414f21ef342bea3f6f3da684802b5feb63f309127c89111d4334e932c3aa3e5097947f91d08704a5a821823c957b0ff92fda4b697ce0f9b47d2ca9bf674eb25a5f671ba2b5d459b654dbc6f0aa43f81665d42aa96da86c2882b4a006c91b8a5293b71e54e3d4eaf47042d85b4f86463f081cfa92b9fa9e2b515d2baa2a5da9e4eebc3ed1df6caea6fda26828b3ee28545a3dbccc96e60a7c08c4a94f361412a53ce1528e372bf0ed1cf235674d44c81b666c927cba9422c56d94dce88ac389daeb4e07005ee2004e79fcf1a0d6374c44a054bc98ec531394f96fcd532c7284a8e09d560c84b10d0012bea553ea1191b9d465006b034ee83216b859a57a5329b167052d480957b8d15c74e0241ce7305917662fc1b9f0ecb6b757b725294951c67bf1a8124eeb510329c04a14dab5c366d5d6ec47dd699593ca490539d43c3b2ba9ae0e721163714ba94e0eadd52d6f1e54a3927f8e9595d94ac92b4596997529d6bd498a8788a6cf7041c6b4c6906e12ee2d95b6dd184d7a6d4b6d42305bde229285951c9564f3cfd33a0deef3a941ad6b5d956ae9d5463c989b9d8e5a771801431a2b1e46c9399c57d5c735f42d4319c76c0d1c6a77929b2c939fadbe875085a48c9ec7db419e3b8b852d172bd4bf164b6a25a00f3c9d20196466bb485962d4e2ef0ca36a0a4ed3938d5ac42c30b4eca2abb8a247692c02b5a7b29490783a93c9016dadba13508e9ade1a8a14103f128fae845dd5609341c242ad21716b12186229f01a6821b5819f11593bce7e478fcb5d370ea5eca3123865df24fd35dcdd45065c6796bfd2a4a4a7beed58dafba397918b2c9526295f0c43f804f752701406a0fd2028b4b8958fa6f0e019d567a0b454e0d894bea472941ce500fd403ae7f88dee2c70a73936009543a2d29b6df0ebc7090ac92748364164acae2f6d82277132ccf0cd3691195264bfe46d965056b5abe407274663c0c9384ac30c924a18d0492bd6cae8dd7db75553bee722dfa5a544ec7082ea80f723213f4f31f90d23555f1c7e0373f05d451fb3ee987dbe07ea9a9fea0da36c9541b0ad2953b0ac3f2db756c0581d86fddb947d7938f90d5788aaeb7bc7015abaa3857031d95ec4ef6c9f5e6a5b5ca6b5508e90c3056e94f2129c9fae06ae5d91854123416dca076adbaebd580b790a096ced008231a4da4bdd65cad59efe11eea1d34545288f1c0de90011eda734d94e9f013374ae9ccc16198f546925092a5671fad8007f22ad2ef8f3744710fb91baaab298cc11f07b480720a750d3a76422dbeeb426135390f3de2f9d0a0959d9b823b67ea7e5fc7560c8eecd4f364abe5ce96257bda9eccc25ca3d1545c8e92488eda96a3f338d0a405de1184c417fc4edd0ba059b56aedbb32b8b96880dc4dfe579b50036a724a89c63278f53efa59b0175dcb2a266c1208ed7ba9a4198b7ea5875cda15ce49e34cc780accb2cdb04d826c78ad14270bc8ed9d63f285d9972230a5b65292cbbb4e3278edc64eb29a035333621ccff680e8c8294254c624d55df0414848c8c64f73dcff005faebb4205fbbb2b48eed60412aafc7654b505fa7d47d39efa8b94985c4d921d6e52a46d8ad93e32d5b52482493ec31df39edf2d2523ec328cdd37caa85856c3f46661d09a82f3d507bf4af34d3456b5baae48c019240c0fcb5cbbaad95179afddd87924c7695a6f18bf216e6adb49e88d6dc81f7bdda5aa25302bf4ab7dd4a0a47ae493807bf032ae3b6aa25e230b5c5ad373f05d1517009ee0cf8f873f5e43e681dcdd59e9df4923491d3da33d55a8b2a08152f0373695fa82e2f8501df18e78e077d646da9aeb6aeeb4abbd541c2da40b177c327d4a9154fa83d47ea954054aa315e444290829482942bf2f51ab1a7a0a7a63dec955359c4aaaa9ba601a4275a5c24c786da6a352891303094123fa69fed9a365cbbb82cee7171392acb6b74a9fb5294b5c57a9153ab25a2eb48756a434e39fabbc8c9081edf23efa7e389b1b2cd20949d44bdbc9aa4f0f20a4f50a5d769f599f57ea4d4d980e858def1712e78a55ca10c849e4630027d0638d57fbb1638cb39c7cfc92d2e979bb560a9afa695096d229d36b0dcd79291b4b5bd01c3e873f3f63a34821701a01456891a3030bdd8a7cea7a84790a434a57e0095056ef4c8c67ff00ad26f21b872187349b3553e85053168ad08693225ba50d85b8ac2125479563b9c0cfe78d4dad6118bdd0e573c1b2f7ac39f714330603394309ca805673ee4938ca8fcf9ceb1d3816d4a0c8f0966b17dd4c8850e04d76934f693be62587436b74f3e50a4f98e780791df507d53b0182ea6d639c48fc90f79cb1af7a8b30aafd42aec54b88c06dc8896a13581f813e73eb9f311c9efac0e6bcdd3ed6cf4b1ea6461c7adf2825ebd29a35b2e47349bc9994e541bf160a1f6762650f54a1d4928ddcf638cf1ac7f705cadd3573e6275476b6f6e5e9ba408f2940f9d4adc9382956783eb9d41c4856a582d846a2aaa93fc1814482f4c995190cc061a69412a2ebaada80324724e13f9eacb8490c91d21e43e68420d6e0005afa9fd2bbdba1177a6d5bfc416ead369ccd4cb316607cb085ef01a5a876502957b838041c1d5ec72879b84531168b10a3b5dad92b502ef233dbd350924b959a6c117e93d3de9f794496ed39128470a7825e561b68e3cab593818079c123b6a838ec80d1ba2d45bab18dedcede7b2729b861e227b2b9039db7f2f879aeb1a057de851dc4f4ead88f519af36532ab72c14426891c807014bc7ec8effcf5c30804206b24306c372aee5afe15eccc5d8c7e2e832e3e67fa0b154ad8ae5c094563a81753f5e8b115b821d488f019e7386e3a7b81fb4a39f968b4f54c73b4c11d8753b95ceb78d57f1c934c5dc67ebf9f2f4fcd2b753ae8b527d3e3b744a1264456708439e084341438e00ec33ec3573148f633b47ab271a5a2668393cfaa9a3d51afcb63c1682198c919508e38fe3a6a1a889e46b36baa7978e9777221649158b8a2224e3c652f1c1cab9d58f66c03641ed6a26cb9cad54fb86ebb7a5218b12bf469e5d92a809aacd4fe9646c194b3b15d804ab215ce41fc4071a1099d1dd8c19ea997d24729f789ce3903803cfe2b4163aab7836dd0ae9b4a8b05b44af159329b534e2d6a3e65a54952b71c0c13db9181db442d9640038aa7a811c7e0007c47f6b3bf2adeaf2daa552ba6d029f2597dc65d9284a25f8bb0721aecacf00f9927bea324ac677436e56369dc05dd2168b23769d269349cb2982fb4d788a506df3b54804e4a71dc77d20ed6d764596991b5ad0187d538bf5684db618a7a998e1b29700582ac1f439ce99861d7de0fca4dee3aacf170bceaf67d62b34272ad2ea14c5aa1b594b277f82fe704152b85217ce09e4671db591d3ba2d4e26ea0658c9d3b21155a1546e08f128b4fb51f8adb6c01bdc084a8bddd5b0e72b03b68ec2c78b213e4744ed60dd4beebb7abd6b3cb6aa94b9486d3d9e534761fcc703417334bac174143591cec19cf44368f477ae394cd2d7512c460addc9c8493ec3b0d635b7364eb9ed61d76caa6c7e91dae9dcf3d7029e7f82bcb89ce7e83d755bc46a1942cc1caac9aadd159a02a4fd9afa5d4eb87ed3f63c17538a6daf0a6dc6e33dbc690c16db8e4e3be1c7779f9a069ce0f50f921739dcc8f927b8738c8d74a57517da5bec4f63fda1aee837cbd7554adaad4788204c7a1b2dbc26474ee28052bfc2b4ee20287a1c107035646a5f1480308561dd2def05fe3b57add769b704aa0c57955297f1ae32c2c270a290b294f94719e324fd7b0d3924cd634c8f360163dac89a49578e9bf4ae6436202e5bb1646cf11d75b681daea95b4210b1fac1185104f7dc46381af3ae27c7ddc4276d3c3190ebdaff00edfed515571c92384c34c4b6fcef9ff8577f16b148a72697321b6cc448cb8feec250803f0a52381ae81cc6c700b8cdb293e1f40fae786db1cca917517abd0dfa8c7a5408ce1a1c4500e81c78c47ffbd74bc149a86a0ba69e68b87c429a9b7e6bd64dcf645df62d424bf13eef622a32dfe8f62d4403ce47b1c69820dc31d95aa7a669bcaf53aa9d69113a7e2752a1286e46d2b52082a38ee33aad91d4f555cda6fc4d55138a633766d1950d7634b796a75d8eee54493e43dcebaa02c2c9e6900582b84455e54cb2bef76a13f150dd45a9e971947e88008da15ee00213dfdfbe94731e0eb68c2dc6e64acec5e6ff000bdd5119ea54abc22c1a84750815465d0992c7250b4e09ca3d7048f911c69c3545d1ee01f8aa1961ece4d27239226c5169f2e90f3d4b809a75482c5414b69252a6d6d6482823b652579e077f5d2d311a5ae6901d75b86676a209c64589bf245eaf35aabdbee5d3594488ab8e9095a99f0d4eba41c13e1e79f723f87b6987da66d9d6b8fd7c9245e5aeb34a1f4a934fc85b1578b3d9d995a0791d48f9a15ce39d252c1a3bcc288d9358b735bee8acadfb75c80dd4165a7082be40252061292477034374cf780d2871c1a1e5c520556e7a9df558b7287548cb71a82b4325d8eb5b6b00abccbca39e538fcc77e7450e797020d95ac14bd946e7339f2b2bf31d37ab2a2c7a0da953aa4ca7fc478d3db9aea64869ad852164ad392d02bf30ce70720f948d46ac3a3026691718550d63aa4b8359de02f8f86eb986e7810e3bff00795b2975b614fb9124c6c9cc4908242924f6da7071cea2d943b0ec1fe6dd55f50c923bec66ded707a8462d4b1ef67c26a6eb8d51e9ebf399d34ab6819ee8481b9c3f4e3e6355d5a699e46acb8721fcc2e821e03371021e459bd4fd3aad2efda4aa7f67eeaa512ebe9aad8abcc894a994c986aa95783259754dacac21b50da429036f27b73bb56bc1e23335c5c2d9b8f8725baea1838580c80937deff004f827dac7fda67d77bda92fd1a8744b66df7e725519131869e79e46f4ed05256ada143239da4eae8d1c42f21e4901311650aa7d9158b56721a97e24f9c58095cd390800f708ddce339c9ee7f96a86699d57e3161d10e573aa3c42c02b75866aff77b54c8c5b0f1f31585fe11efa4d949144f32db2554ff00a719a5b859fa9375d52aad7dc71a4bc588c3c379d4f3bd5eda054c8f2d25aba495cce114da231de294691d3d8d596026a92420ab9dbf2f9e890cee0c1a972c1f234991e72562bc2974aa2435d2233a5d420021b491b49cf62343655358fbdee986d7bc00d05502d345b2dd1a990ee088c8696d83b081df53a6a78a1ab74f6c955b238b5e482815f76cd992640728b15948dfe6daaf4c6a753c40b1f6085ef6f61dd2dd2ae6a7510c1b62bab756b98d6e96e2d007860a7f46028727b14e3b0c01abc2c642d118568c824918ea906de488d32db5d3e5b888ab79e87e22545c63873c30792083900f1f3c647b6959e91c49d36b24e47878173f9aa7572e1a52910a9943aa34d3886c3d29d2a0b29c7e06cfb83839cfa7d741a895ce606b47c10e9435a4b9f93cbf7fe73582a56852dfa7469b499519a8f31cc3ace49c288e4a88ce3e9ac7d348e6b643ebd6e85a2fb95f341b6dcb5aa0cb75114e934e5a97e1b2fa95842bb12db81248fdd3a332ccb0210dc355cc20fa7ecbe6e2b305cb524c5a3ce1152faf6e54a4a9393d864607f2d6cb439cb292a846ed12fa2c903a517158350555263adc85a4e5b238191fd35311969eaadcd762c0613cd3aefbe554b9923c47e8723c153297f0363ad2c6169567b8c1d06a25646c225b0f340652d648f33533491cc81800f5532a522d9e9ecd71aa13eaadd567af6bef3a82e34e38ac9010d007c456e3ec4f7c01aa29a67d68034dadb75ff85e9b1703a0a4635f516739b9bec0792077d9ea3565e6a9d58873296d34803fef1c3ea18ec9464a5a1f5cabb76234cc549d8f7a4dcff37e6a13f18f78b8a7cfc5734dfca10af7914e6d9d9f06ca5a3c95296a29dc54a27951f37afb6ba9e1e2d0eaeaa82a35c972f372b774ea421cb829ed2c8091250e151f64907fd34d4cf22377914a9669cab5566bf70dc4e78a9751191d825b195fe64eb9c24370a4eb1e69d688d4cb1ad372ad3aa0b72a55046d6d2b5fe04fd34b3e4ed5da42b7a0a76d34466937e4932dfafbec4f22728cc2a59504edca81cfcb8d42aa48e9e3b9dc2a0e235cc89c647e53dc78adcf7d552969719013c247603f2d7253f19d6ed002e6e5e22d99f7b614a3a8b56a1c5a829099cadeac924af9fe7abbe1b4ce999a9595053c73b7502a6f2ba85737c40535555a90d0dad8f61ae963a66b5b9566ea0889db2bf0eab5c0df91d90a51f7233ad1e1ed7652eee111b8dc05d093ec955ddd5cb8eb0871b4d36972d2890f21bdadb85284ee43692060e411eddf4d989d2485dc8294d51eed0860dd532b54da73423cca0429b02325e654fa61c80430d8ec1c3d892482503b81f5d4c96b2dad51696ccf32e9b37ea97e606ea5519743a5cf8b18d41496e2254a6d4a5adc042b093c008e49513dd6903484d1c73cba81db922bed18bb06c805dd32f2e9d549fb76f7a8a28ab8ce78e26b670dbdb709252083ce0a78e41ce738d3add4cb8194ab1ae121d3d7644e93d43ae4d87f0b323335586a783c64b0c2428a318fc038503c12527e9a09b3ce06564f4a1c754672ab1644aa43d41a847f806a428346436a5f95d6918f377f6f7f9ea41fdd3a8642252b9d37d896ea772c67fb53f76f94d2dc989abd7a33eda1614da1727716939e338ee78ced1f2c919d53cf5af6df48375d970af6684b696bbba3fede7ebd3cb7f24bcdc8bc3aa2fa65c67a441a0ef2876acfa0e149f50da010558f44a481fb4ad6a0a09aa8f6b31c2bbe21c72978547d840ddb90faf4f9a6928b27a6b50892ed7ab3cecd08d9f1f2705d3c7207eaa01fd9481f327560208a9c69685c4d5d75671325e5d81b346c17b55e74ab95d4cf95250f797caa40183a8c906a17056e878b9a73a2718eab9bfaafd3162b178bd5ba6d5c437df4a7c761d6778c8404ee490477039cfaea7171075337b2d175732d4472779b9ba51b7ac8fb86a465b950f885b7e540420a40f7249d12a389d9962db5d273d40d3b2ac5856bcbabb8b9325d0d468f95adc27033edaa592ac486cc0a7434efab9011b2604d6289507e453ea72c3ea6c16d8c1c823e5a95298e225cfe89fe3f53eed135ac2bcadba0458d355e0252a1bb29e79d731c5abdce25a365c054d53e637723f7656a3d1a90e240f36df41aabe1d4bef928c20c2c6caed2572bdd0ebb57a93b354bc80a3b52ad7a8d2c229e20c0bb4a4a7103035a80baadb92719ce34c8e89eb5d632853ca2528271ec346be9162a2e75b65d3540eafc8b7293217329526ab367bdfa59042bc3538a512adcaec48f6efe9a1198168d3b2a3f7492a5c795ff003b26aa2ce1d4dab522133557d42515b8b8a81e40840c9f28e3924273f33ad989b210412949982959dddce3c912ea8d25140add3e3260c48cd88eb5b252e04ada5e0121433f87724723fd34b4d09fc297a50d603af72845cf7ad4ba854ca4dbb57870263b464065971e19d8d007293dca9449e71c6988c17f84dd6dec3af50c0b592ddaf5c76db9ef5158a5fdde9715b846192d2c91ca9bfd9f981c1f6cea441d961046775e97a756eaee36bb56994979d7a4c6f01956ccade5a88f28c70523d8e4eabe7ed0bf490ba4e1f4748e11d742fb3da7bd7c79ff007cd51ec7fb38d7a6da42fcbe5f832e7276aa3d11b737b471facfabb295ff00913903d49eda2c7c39acbc8f3729ae25c71d3334c181d7f658a55fb391525d163511f448646c54664795207a003b0f6d4bb6319b15cbb295d23ae4ee94aeeacb32231666d25c65f42b70528f29fcb517ca1e2d65614b4bd8beed725d8bd4da9521486299e66d18dc851c83f2d0002dcdd333d1c7503bd845ae0b9e05cec479888822c9ff00c451ec47a93a0cd551b0db9aad60f74796137082262355a7daa4509f4ade7080e39e894fa923494d3eab073709a179e46b5a375a6f0bb635b1019b2a88b529e030fba0fe23a3c716b6dcecba69646d041a5b82bc6d3a33b2cf8cbfc4b1dcf273aa3e255422eeb579ef11ab7ccfb1298c51eaf444bf5354c294273804e31c7a6b9f150ca970659223bc14a6f6ea5d5df425a09f102544289c8046bbbe11411c030ae78750b09d4e53f935a72aafeff0c27b709d5eb9b6dd7431445980b14b4fe8b70ec5475b65af94d2d549f8743654ea86e3ee758fbdd2550e20d805d4179ff85958ff0037ff0098d09bb2a9a3fbf5e3f63cff0011295ff0f93ff38d3717351e21f7c534f57bfc5891ff000f1fd4ea32785243c3eaa7b6bff7c2bfca47fc9a5e87c453955f851b95fdb98fdc5ff4d31cd2c7c2bd6d1fef763eb23ff6ce852a5e1f13fd3e6ba86d6ff74697f41fd3457f85a8eff085078dfe344dfdcffae91778cab11f721287553fbda6fd06a27c499a3d949a27fb54fef9feba04de029c7ec986a1fd84fee8d5033ef42a4778969e94ff007bcaff002c7faead64fc2af3857df1f24a7717fbdebff30ff5d33ff4ca2f18f0aae593fec53f41ae078a78caf3c97c456dea2ff76ffe93a5b84fdf04cd278c2e7fb97fb32fe835e8347b95d051fde24fa67fb673f77574f5771af87ffb1abf78ff005d686ea6b337dcfd353912efdd7fffd9', '2009-07-20 14:32:44', '2009-07-20 14:32:44')[0m
+  [4;36;1mPhoto Update (1.1ms)[0m   [0;1mUPDATE `photos` SET db_file_id = 3 WHERE (id = 6) [0m
+  [4;35;1mSQL (15.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 786ms (DB: 34) | 302 Found [http://localhost/users/1/photos]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:32:44) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (0.9ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.8ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (1.7ms)
+Completed in 364ms (View: 271, DB: 10) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:32:45) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;36;1mPhoto Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (5.2ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;36;1mDbFile Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (1.7ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 66ms (View: 1, DB: 12) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:32:46) [GET]
+  Parameters: {"id"=>"6", "user_id"=>"1", "photo_id"=>"6"}
+  [4;35;1mPhoto Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (10.9ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '6') LIMIT 1[0m
+  [4;35;1mDbFile Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Load (2.9ms)[0m   [0;1mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 3) [0m
+Sending data Toco_Toucan.jpg
+Completed in 75ms (View: 1, DB: 18) | 200 OK [http://localhost/users/1/photos/6/photos_managements/6]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-07-20 14:32:47) [GET]
+  Parameters: {"id"=>"6", "user_id"=>"1"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Update (7.0ms)[0m   [0;1mUPDATE `photos` SET selected = false WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (13.7ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '6') AND (`photos`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (2.0ms)[0m   [0;1mUPDATE `photos` SET `selected` = 1 WHERE `id` = 6[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 184ms (DB: 33) | 302 Found [http://localhost/users/1/photos/6]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:32:48) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (10.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (1.8ms)
+Completed in 250ms (View: 42, DB: 17) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:32:48) [GET]
+  Parameters: {"id"=>"6", "user_id"=>"1", "photo_id"=>"6"}
+  [4;36;1mPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (9.8ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '6') LIMIT 1[0m
+  [4;36;1mDbFile Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (0.7ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 3) [0m
+Sending data Toco_Toucan.jpg
+Completed in 127ms (View: 1, DB: 15) | 200 OK [http://localhost/users/1/photos/6/photos_managements/6]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:32:49) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;35;1mPhoto Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;35;1mDbFile Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Load (0.7ms)[0m   [0;1mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 80ms (View: 1, DB: 7) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#show (for 127.0.0.1 at 2009-07-20 14:34:08) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1"}
+  [4;36;1mUser Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Update (13.2ms)[0m   [0;1mUPDATE `photos` SET selected = false WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') AND (`photos`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Update (0.9ms)[0m   [0;1mUPDATE `photos` SET `selected` = 1 WHERE `id` = 5[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 144ms (DB: 34) | 302 Found [http://localhost/users/1/photos/5]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:34:09) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPhoto Load (9.5ms)[0m   [0mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;35;1mPhoto Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (1.4ms)
+Completed in 265ms (View: 40, DB: 17) | 200 OK [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:34:09) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;36;1mPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (2.4ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;36;1mDbFile Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (0.6ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 118ms (View: 2, DB: 9) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:34:10) [GET]
+  Parameters: {"id"=>"6", "user_id"=>"1", "photo_id"=>"6"}
+  [4;35;1mPhoto Columns (35.4ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '6') LIMIT 1[0m
+  [4;35;1mDbFile Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Load (1.3ms)[0m   [0;1mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 3) [0m
+Sending data Toco_Toucan.jpg
+Completed in 146ms (View: 2, DB: 41) | 200 OK [http://localhost/users/1/photos/6/photos_managements/6]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#new (for 127.0.0.1 at 2009-07-20 14:34:17) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+Rendering template within layouts/application
+Rendering photos/new
+  [4;35;1mPhoto Load (0.7ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (2.1ms)
+Completed in 115ms (View: 24, DB: 9) | 200 OK [http://localhost/users/1/photos/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:34:18) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;35;1mPhoto Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.0ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;35;1mDbFile Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Load (0.7ms)[0m   [0;1mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 127ms (View: 1, DB: 6) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;35;1mSQL (1.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#create (for 127.0.0.1 at 2009-07-20 14:34:23) [POST]
+  Parameters: {"photo"=>{"uploaded_data"=>#<File:/tmp/RackMultipart8549-2>}, "commit"=>"Upload", "authenticity_token"=>"qQmJIaIkeyjx5CfhcadoHNeAmVWIS1kmfiKM5BOHhyY=", "user_id"=>"1"}
+  [4;36;1mUser Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mPhoto Create (1.3ms)[0m   [0;1mINSERT INTO `photos` (`size`, `content_type`, `thumbnail`, `selected`, `user_id`, `parent_id`, `filename`, `height`, `db_file_id`, `width`) VALUES(287631, 'image/jpeg', NULL, 0, 1, NULL, 'Waterfall.jpg', 113, NULL, 150)[0m
+  [4;35;1mDbFile Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Create (92.8ms)[0m   [0;1mINSERT INTO `db_files` (`data`, `created_at`, `updated_at`) VALUES(x'ffd8ffe000104a46494600010101006000600000ffdb004300030202020202030202020303030304060404040404080606050609080a0a090809090a0c0f0c0a0b0e0b09090d110d0e0f101011100a0c12131210130f101010ffdb00430103030304030408040408100b090b1010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010ffc00011080071009603011100021101031101ffc4001d000002030101010101000000000000000006070405080302090001ffc40044100002010303030302030505050509000001020304051106122100073113224114510832611523427181333474b1b262727375a109243752c1163536538291b3c2f0ffc4001b01000105010100000000000000000000000300010204050607ffc4003711000103030301050704010403010000000102031100042112314151051361718114223291a1d1f006b1c1e1f12324334234527262ffda000c03010002110311003f001da2b0d75aabeb2d3356251c11cc1d96407d38cb9dc54f90ac54f01beff071d796b4d377ab4a92a9c6fd63183f9e7544ca0e93555dd90a2c761a1a1bcc56d84d43bbcad0238859901c2291f9860e49c9e49ce4f5bf6ea036134625300c520353e89bcdb352414778aaae91e674f55e62772a48328c7390b9041c7c0e7ad0b6bb6de64b880233b731561b616a7d2c2c6924819c44c44f86699fad4e9faeb4c76bbd4d352d1d40a6a35b9c304551288d7dc2461b87b4e181c63207c107aceb27cadc569c9ce3c7c2b57b4bb34f66ba5951d4048d40624120efe3fd5536abed4496aafa4a09eb20ac7ad47486b69572b534fb3709c6067da14ee1e78e7c93d15bba3928dab0de42be21cfe4d1253e94d517dd5315a354451cb6db7db7d091ea906f620055122e33ed4c7bce0e3c938ea41d4c6a46f3f4a32d0a24488a69a7e173ba5455979abd2cd6e82c56db44b41434154ccd14ee36baec0300e5f2e1879dc07839155db84a8842c7bc4efe03faab68b6564cd66337bb5dbf51cb62ee25bd66ae8e4fa39ea2395888082700a15c84048c853e0e467ad54344372c606f1544a341834fcd3faa2eba274e505ab4f76bfebe8e94a4a60811d321c922643e65ddbb6e472085fb6073cfdb8bb7256e44ed399f0ff3530a790dc37b54aa3d69a035744e2828aaa86b68a0d95d6f9fd54ac8cb16c3a9dbb8ae48e4e7f911e59eecf7d2f071b33b112644ec71311b6047ceadb0e32ea425f3a48e68c742db6829162be5ce2acac86829d5edd4d3bb36d64932ad2aa80ae808cedc8c9f3f3d3dd3372ca40b64099954c42a4446feee7339000223228b72f40212a911023f334c5aa9af5aced1255d557a5a2a2628d12032446a19080a54a91e80f7a9f3f00f03ac53d9ad3372aba5e92ee2206db475db3a71eb3436ac9e7d9947bbe7f6a546b06963a39a87565be782592e904f3c739770f226e00b39f73a901b183e724127ce8abb3526ebdb8125612520cec0e4903699804999000a4da8b494a5d04112238fc3e94591dc2dda4b4fd69a1b0a57d4d346d2dc657a808aac2205721c9cbfe550a001edc9c8c9eb8075a5fea1751da2870075a30881295266011232419e2246d559c58856b1bd2b6c9536bee6deaeef551c5124c18430c92c91cd338418ddc90ca1b3b55460f19f03ade6acdcb2295ad656e1c95183e718c1ea4e40c0a7b0430b590e0c5505de82c94d35cad746b515b0db8fd4cd6e99c49b260e4834fb948daa838dd9208c0c8eaf3e85921484e9271a86dd3de820e4f0371bd54752942fdccf9512ea0ef35f6c3a78dbb4b8a0d3f534a24927b812d505e9e5042b3231f4d6445fe2dac40f0338027d99d9cc778014481e2acab9304c79478cf5ab4eb0bd21738e3ca82fb6ddc8ff00db1bc4d59af7525f7525053eda6a7962a68d248f7c8a599c2aaa84dca9b9fcfb947c9eaff6c766bbdce9b5096d4ac19fa69e27c36f5aac94a41201a18d43dd3bed9ae6dfb06fb1d0a3c93b4b2ca2191ea98b2e1db787ce0280a46060f000e8967d8cdbe8d5709d67183c44f97e7341167ef14ee77a33d296dd4775edb84fa9aab86a6aa9e482a63a8ae7a28aa23de1d5e2dea0543ed740416da6272ca091d09eed04337ada12343518206acc642a0fb837e27508aecda7fb825971b4a42e44c00a215040950c0c4823306268ea6d13abaab50cc97fb1e99d3d2d22bd3c511a5fa98612e364642c8d20c92c3df860768da3e7a912c1683bde29698190609f388f2e3eda569d876af2472999c6e47201f21e877aaaeedd9edda18d15f6a3b6f1d75aaaac71daeb2758e49d5eb6358cbd5e41069c6d1b1086dc48cf1c65316b7cf27487a0859508007bbffa99dcce4ec2aa5eda298716a099f1e44607d3f69ace3db8d5b15935a51c3a79e2b99a7710d1d457d144aa611bb1ea4721298232324918dc48f8eba3bbb7ef2d945f1a6724033f2233fdd2b3b87fb496d5ba9217a524246d00499f131b4d68cfc2cf73ada35dc76dd5f5d432dc2ce276815628e28222ec41292310652cce88022004364654f197da0d9b221e6c4b677c99dba474df3f5a025a6d5dda34c292920e312092483e0304e36ad331eb0d01dc3d433c71d3504974b3d488fd78d82344c54644847b98721580047c793d5262f545a0e5c0890238f0cf5fb54eead92004a727f3e956f79bbde5ee628ac9534b4cb6b68c2978c889d5d39db8619e03019e39fd3aaef36d3aea5f4182274f4e954e206950ace1f8bced2e8bba2dbfb8d6aaf8ed1738292494b05414352caf9f471c0495ddf82a092c7ddce33b96374e148446a0adcff33d388aa1716ca78e940c8c7e78d26f4d6a9bd52db20a9a4d71533cb70c7ecf82e79855255600a473313c11edc1c0ced27039e9d60217a4200037d39c7522b3d6d29859657b8fc39a79dbb56d8fb8b69d3b23d8e2a7d4569aa6a6b87ab0e26f4d7dd3c720c0dd8211970719276e39ead34a0b09680f191d284b429383fdd34a1a1a4bbe92a8b7502c10455720852ae6236b05e76055195f040fb64f5a4e21b2829e3acd58b6516561de9b720ff0686ee6b5b6ab74f50cb5756286258cad3bb46dc2e7da83dcc7180719cfebe3ae22e5f7fda16860274030666677c1f8768f015be2e96901cebf79c7875e94b5d77dc8a3a5b6450dc3d48e2791e2592a21d94fb846645c646548208c9f38cfebd46dedd571ee85493c8391c638813d26a6b4386cb53c609f5041c8cf065247a549bedded17cb2c106a45812d37181e7aca9a766a65f4882ccfeb7db1c61b395241f3d63f667643dd96a08b44fbc30273ce093ca88cc000244735cf864dc850d80cff009f1aafaad2f7eba5ba2d47a3355c770b33d222c6955463eaa48015252274c11ec552b9e3dbe3927abb6ccdb5a05b05bd2ae626249264832249393b9f4a01ef129c1c452b9add7fa0b7ea2d5d156c6f251d4082ae9f69ddfbbe18939180c0a7d8819eb6b4b2f069b3e9f9cf355498ca6873516b2aaacd130565eacb4a9450cf2d3ad344bec680b6c5cfc8002839ce727cf5a0d5ba43fa5b398dfc77a339725c4840e284a5af86dd60a1bfd2d64d4105ca562f14406d68d1b2a197e46501fe60745d05d794c912531bf5ebe79a8b2a09590aa0fb8eaebc4754d72152d4e8dfb88d55b2c00249c9f9c92093f27ad26ed931a3d6ac227ae6b74417ca096d972aeb857c947a82a2b7e9a92ae678e3a2a7a307df0d26edc563c9d8084c92189f200e39e5dbd9b6a2801249920092419930333d3a0e6a26e9c72e1ab85a838e009f24c6129ce0e00da73d4d565ef56de6d17f5b958af9a7eb20150b255ac8af3ca5b68db866e0f2a00031c12401e3acaec675b0ff00b39d67a4a404f911938ea4c5769677afb772ab1ed0943892414ec13e1d67c49f2ae975ee6e95bb51dd2c7a86ed0d45beefe87a514329893058963bce7d9b97048f2a4918eba5659eedd5293f86bb0ed161b66ceddd7042961473b14cc263cc4d623bfd65359f5355d0596581a8d6b64316e21494dcc150b06fc831c05e3c1f91d752d82b6f52b78af39f6969a70212905209de47500120ec3a023d6981a5f465eeed358ad9a6eaa9e5860aa777ba3c220f4e690070923b112aa2af01972bee041f23ac676e1b6d4e38fcca80f76646318e249c9e7152b7bcf6024a55ef0d8ef333f211831bf34ecd134776edbdeb565c66b4c51cb73a689a99e9b7c7b2281d925db137b776e412310496dc3fae5dca917aca1b270277cfd7e943b7bf58ff0070e1c9567d73b5125cfbdb6db345429510d7ddea1eb6465688aa4c533b4961e7014a90ebc63923cf404d8a40284084a7f3f051bdb58709930673d23efc0143badf5b6a8d7f65a0d1c96886d14b1dcd4c13bec9e48b6c7bdcaa3e04a31b950f0770e78208b56ea65b05124c09c48e7691b542e2e59415adac8e2475da471cd50693b71d43761a4f555b29be86db664a8a3df3b52a8ae27d567da140dca8eb98c06f248042e7ab250865b2fb04ca8e7991e7cf81acbb9745c6a1a4024ce07e7e74a72f6ff42ddebaf895170a031a3429548c77c6a1b6e14071f385524ffb58c746b632b0a9815488291a4d3961115928cd153db98143ec456e33fc458919273fafdbad9559c8d55244c01c0a17d553d4fa06e7019888576490a8272ac71907e7ed8c7db9eb3ae7b251700a1735a969dc77856e48e91f6a45d4e97b6deef0d4f57654aaada872cf4b514c1b10e46f6debf931ede4e48cf8eb1fbaf646b425cd006019fbeff3cd67dcbeb71f52c199dff311e94c1d29db7b09a2aad30971a8820431cebe9b06daa32028046d05193c803392083c75ce5c5f5d38ec6aca712260ff009e9c50415253a4935557dbc5259678e874d510a8dd5f150d67a677972623ee6f186276118c01e31d49a6cba02947704e7f6a1a94566055456d7d23dd2a6dd78b7c2b49779c2564038693743860e078e78e09247f2e8cdea4a35a66533f30684612a855237bada3aa22d471f6fecd1a436e310aba76665fde40321941f2cc086c8e73b73d747657c9ee3da9ccab63e676a94042b1f9351ef3a42d8fa52dba2528ae35d51411b0a8ada52b9a7937637344cb968f738538e7e7edd33574b2f2aec1001e0f3ebd714c1694ac9a5d5fb454964b6c325ea8a4142b51251c754622637a88ff00b451c8f8653fff001eb619ba0ea8f7644c4c4f076a9a94ad5a935aeb535c3b797d9ae5a0e38abe0a9d35595752292dd5512c57594290b513d44cd98e380821a105b61565504e4f5c034f774855dde0294b891a484e44ff00d48c9d4ac41e46d06b4bb3ee9866fd95b80252dad048e34820931cec4f9d09e98d5fa4ac54c51a9febeb6487d09a7a7802432b00063321098e5b2e76f91c1eaa95768158f7425bde0fc7e7024f4819f306ba4fd4ff00abacbb5fb5ee2f2d1b250b5123560f001f0c0e49fe2a9ee562d2bae286aea4db62b5a44dff0075fa5b9c1f5708072700925900c71b428f8c746b5bbbfece753fea6b27705242493b74833899f3ac5bcfd497fdb450ab950506d212802069036db78e49a5edc7b67a7adf25ceba1be574912cc2923a8a8b5492aa7a193267d20508ce31263190c3273d750c76cdd294866e1b4854640713ced1267d26abb6ec6a5a913c7044edf98a32b0de2ae9e829a92c4d0c6d490470cd70287152a91b88d91719538561e0649fd3a4f202e4bbc9dba4c62a89d44d3174fea4a8d496ca0a5bec3089931b639e4121854290db9c636ee1c10c48c71e707acf0c0b7514b591f2a91040cef5c756e8db55257555f34fddeb6b2ae58aa6be5ab711fd306da76c6002481ed0020ce73f3d119bad5ee280c408fe7fba12f329eb42366a0aed18d41a8f5653544322a97a6a2cb488158aed573f00b2aa85f39ce7e01b854977521b3bee76f952754a00f8d7f6b75d5ae0badb2db64b0357deef352699a9e96999fe9fd592292495828dc591914a93c00a3c7c3b16ee695a94b8488dcef1c67ad1d82a42c1981d453e74c6b9d4f2dcc429355ab2d63d2012c25520800199ddb2005030067ee3ef8ea368fea3a89e9fbfe638aac53071cd6a9b2e9db24f1a350d6bd4980473426a092278ca024927193ce41c638ebbcb7094b60276a3811567a834259ae03e9ee7118a5a9553ba1936287dbe78f8c81d14c119a5159f6ffa6ad76ad7170a0b70829ae1620ad354880cad505d77002463940011b80001c8fbf5c07ea6719b4050e24ab9f01e31fcd31306842aebeaad977a5ac894b52194c1553c6830c241ee07ff002fbb1fd707c67ae2d10a9eefce36f3fbd0d4ac54fd4fa4e92af49ea9afb527ab553fa15a557863253a8395c7dd57763e72dd5b6d6a7069db3e91cfde86a1292134ae8b49d7ebed7764cdc928292ef486b212ca59e4f464209c0e1776300b7d8900e7abc95a9ab7525433d78cf5a6d1de99353fb95a6af363ad15113517a34a8890cb252232c72caea91195802fb43b2fe5ff00689c0e082d9d694333131bf4127e94608cd7197f0afaca852d1aff004a5e57f6b7d21fda96af513655d61c09bd27385d8c79fbe429fe578f6836bb72d2c7b8a3ee9e401b639a4b648c734ea974376fef5a46874f6b6b4d0d5c56d9576161e8849369cafb48e40623f5f3d6031da3254e2094f13b7a54d494c693587d9db5d476aa5b84b4768b9d92a26a4ae2cc21a41424991ea0ba8f67bb7ee5e5999ce33923ae96d2d176aeb81a56b6dc0149d464850c4677c41046c0795575d83ca52011950903a83e1fc53cbb5361ec05350c9a8352d9a4d4edf5260a17ab692a5a76438fdcd1c004714640cee918ae079c8205f6d2d59b4a371b79c67f724f527e54ebb472d9403c829260e471d7c28a2e1a9682bf50d15a34b76cf485a2d95b2cd2b5651da626948897872ceb9452586064e48cf031d66b8f3ab1a508088e833e5993239adaecd5b08b2bbba2a85e94a13e3acfbc4c70120e0e0d7a96d5a12e5a7ee967d315d6bb9dda58363b1ac8d562657055e42878dadc80aa4e400723ace79d6ec921d7944c19f1f213933fdd65b4a5bc42d4703ebe7403acfb75a8d924bb4df49592527a30c304092c4865380e542a82aa4b10000540519e7a35af6bb4f6082264f12071cff74458037a8b5b5335bac50c3534974b74904a455b52c11cf47028180245083233c7a81b191fc27049db29796a48cf4e091e1c7a5387a4e8343ba86aa82db414d719eb2a2a6c4f50a27868aef1c33c7ea2b025b21885d80ae58018f073e34186ca8e3e2e241cc7f34350cf8503c773d3ba5acf25cbb6f73badc2df0bd48a98aaeae3423d7253062270c423614a8f710646dbb401a250e5c2f45c009388c74f1f3dfe55050eb447dbcd4ba7b4fdd69753d3690bd524ed1285a805e4469bc712e635c1180410723c1393d54be69c5a74eb103d29c150a7de88d4179afbfb51cf17d42c99ad0e2072a73b59953dec876371800676f19e339b696dfea85a06689a094c8ad0b0eacd796b83ea29b474b57f4e9e80915d998291c150a338c1fb71d7a5301c09856de7fd0a6157b06bdd7335a0356e9ba2a56a7887d1897d7579588072d96191c9febfa750bb7d36cd2964e781d4f4a44d27ae378b95f3525da736a97f68cef24b2ce8db3ddc16c2724e78c29f760ae07dbcafb61f55eacb8f185e0812703ede750caaaae9aa6883989e9a685240d155bb024c8187e6527825703cfdb1d64b774c9643c930060d0c48541a9da0ef351157555aabc43249053121fd50c92edf6ef001e55a320e4f8e4791d5f012ea0293bf3e1d7f3d69d20a49a85727fa0d5f6e06b96d96e4614b0c70b948123f476b292081c7b48523f50464f59aedc82a2c9041389e91cfe75a327199a2191b43bd35d696f11d6dde5881fac061fa741b082368f2719c839fd7a380d04190543d00fbd22024c54f82bad1ab6d54c74a5de3a68a9d0c6d1cd1b6f29b4e369ce4386c64f3c67c7437586df6f40c639e3fba62bd670683ae74f3d6c02d175ab921f4e4f54ccb0998c8ea0a7b97048247393f7c738eb17bff00672a2d8d73123907a91bff009a5a4f359b6f1aa286a6a6eb53a26d353768a58aa2d0e945698e659290705995d86f955597760f287ff36597d37b3149b600dea82547a9eb381e1d2bd8ff005f37697cdb3ddba14fa4952b4c0893ce0411984cf58149ad23a96b6c175863a1bbcc64a8a28a94b4aac091b31b117c3a80146e7c9f71fb13d693c93dda9404effe4f8f86d59f6dd9765da57addb76abda5b2129320ea2748100eda0606a3ef71c1a621ef2434315b2ddab2e336e7915e692289a178a902050816228c0bb124336ec6d1ed233d50b6b1f755dd838ea673bc499f5cd61feaaec2ec8ec74b7ecb7055de1902261031ad50041511eea6098df993bd15dc0b4d455c90e8db76a2bddb83911d1ea1a582a5d4b16db2c4eb1ae300018c0e3779241eb2bb45b5ea0870244f9478cd71ded4ca2c556c96e5456153b1809803a11249da47ad17db28b545fa292c1514cd03d7d3994d4414ef1fa512f8387f70e41384e47183d64776d5bba084c67e13cfd322808297074a18b75b35251dc26a2b5d2c4124922a79e8696bea296a256273ea08c0010b79c829c82016c60eaf78dbc9016679c8047978fe6d524949590052f350ae9abe45516fa40f1d71610d53d457435b5384906cdc912e5cab061c804ee04807ad76f5b2a0b8c648dc0cf9d10925240d8d5a58f48d8b4fac55c8f5967f5cfd354504344f242d2630cc5646e18b64e23c11918e3a1aae54f9d2bcc641c4c7a74f1a8a5b569356b6d4d515d50f6d7b94b77b73e606929eba42f1051c068492197047b587193c7440943c65020f88fe6a490de6451f689acd57a72b6def5275151db0bfa94d14142045529bcfb4a14dc70a3828c079c8183d4d166ad69253be4609f97067c69d5ddc7bb5a16bb56cba883e9fd3da8ae94ef32e43bc7344f1f0beec1c05dbce013ce41ebb6438162003fb50e2856ffa035357475e2afbb77ea3a5823dd1c9220c2900f32fbf0832465b923e01f805dbecdba3bcb830075fe05231512f896cd3da623b84fa96aea60b6c51cad561b6c8ee181695db82a0e170001803cf5e577fddde3c4db8393813d4d416a8c8a0c9b58d3ddee62a9bd5b750d7abd3ce6ae378a9aba3e40901230afe082bc30e783e7255d9c2d0c69f967f3f8a195151cd5869ba5b0d0dd16a6dfab6e15958558c5471d1308c45821c17230f93ce0630d91f38eac29b1dd041c4f3e5b5113a7ad10492505c2ea2c52cf0c90bbac42a22955bd070325b23216401b6f9c609fb0eab348714ad2f67a2bf3ebf5a72531143235dcd47abe9f4f54b54de296ec24a1b78a6266921993f81f1e73939fb6cf23c757dbb32b1ad26638ea3faa495ff00d699b4567a7b2d8a1b65eae56d7b9c687d7828954ed603804bb062791924f93c003a396109c483f2a7d31bd273556a3b85a2b0ade2e4f4f0962909adb7ba06504ed1eac3bd5c819c7824119f1d057d9ad5d660123c73fc50cea1f09acff536cd3da36cbf476f9a2acaab9c32c8f3d23323052aac9b54b649550f9638fecce063ade2b72f5f3298d11bec7e9e5f3af782db561708b775bd61f0504a4198244a88324e88f0e6284f53daf4f252d26a1d3377fa4ad26114f472a1913d44d9eaaae0ee08a0062dce776303cf5af6ceba14a43c9911923c7e959dda5fa79ab8ece6dfb3b828d4a5261c30a3040242409031c9da09cd1ee9bd533def484977d5360d2973af9268d2086aedc2b253b8aaae1629061402d83c92d8071e3aa8edcb6ddc772ca4c759207d7ebfcd70f71fa2afbd8bdb92640049f781c0e664803d667114c8b6687ab96a91112d5491c5219e1929e805b6a106082a93a302e17905324fb793c758b7976ebcd820441cf3fe2b8c431a8ef8f97d68e69eb2fb0d3259ab6f171b8d1d24b9548270de880a493c65b032464679c759492a7c0411819cede9d0d5b082d1d34b4bff007b20b65c11b4de9ab5cd48a64dd5e2b5d59501da1d6760594191487e060b2718393d133d9216885a8a4f48fccc6deb4ea0919acf1aabbcdea77126bf592d94125145b23589a168c9655c1659010e39f19cf8ce39c75d15af66916a1b7099a846a1ef510ea3eff4f7cae15168b70b7d6d5353ca4b54afa0bba2c5447965c00ceaaeb9f1b981278204d76425acab233fbe0d369aaeb877aed129a55b558692349e147ac5c3ae27048dca33b0e149072bc8c1c9c7534766292092a3236cd4fde23345360d4da8e7af5a0b1d7ea2fa98a7696426b2530bb1e430466654253da06ec671f3d11aefd29941053c7e0a8282c9922b5876faddaefbb3a0f4f325e2aecf70b438a5ae8eaa56a435306095907a854cae38048e793c9e09df44942413914c46938a67d4f6c63b6d25b696fba9e5bb4146b92f5354260c00cfa6a919c679fb1271e4f5c4fea2b2d6f870988f3923a6e7f6151333401dc2be5e2db28a4b1d2434a950c64f56a2013cee1461484c158c018033cf9eb912b534b83207d7faf0a6c93154567eda5deae8a4d41dcbd6f45574d3473a456c9aa99d6652a0c6feb06f60f2080a0f040fb8ba5c6c360b633d4d396920ef35d4dc28b4ad8e966a5a35996a95218a8b6058aa9b25710c600db1678dcc19988e39c9ea92add571a839267aff005b513504f1417a8aba1b4c7f45a9f55d269d7725dad9470092688499ce4a6d03c782c4f183d199b3525389545408cd48d2378b7d25a6aabac32d749788bd68a5aca9a5fd9b5a2020010d3cb2644119c65a41966240f68c9eadc777085181e067f6fda98e322aa2dddb0b4db2186fdac2a6b2f17da923e9e805748ab24ec37859dd72ce54140c14f27cf1d58373ba50004f96d51437caaa1eb9aeeecdaebe086d560b6bc51c5b64852ba48d55c9270b1891762a818ce3273cf81d46d9168ea49756419f0a949e6909dcaba53770beaf59431fec6a8a79453db68d4fb624dca17241cb4cee4924f93803adfb29b422d49d400c9fa9f402bd9ee7b096ed8b9fa85e77bb70a8e9055266404911b2899c7d2284adf7dee0e8eb65759adf5775b7d3193e92be565f424139e186e61bd971b94a679cb1c648eb44b4c5c381f304f1d23efe35c90ed2bbb36c5aa54bd2772447bc72609e3ffcf393bd48d374755454102c573b7b2cd37eee94b90ad1873bb700c0af8cf006323ef9e80f94a945646dcf3b796453de7689b0eca366a5921c921200d233b9ce0f22138f3a636a0eeb5df4da5b6c93596ddebc676acf22c998bdc364b1ab2ed78dd46080cc0e4e71d66b1d96ddd92e6a31e99f0f315c35ba12998ab3d3bdc3b7dcf52457a4ab8dab6399e710d2ee85551bf346bbb3b541dbca9e39e08e7a67fb2fbb68b630922339cf5f95116392315eaf7645d7cb46d60d3490555ce5905d61819d952a892188463ca4adb4a85380c878ce376d585a388590a2481107c38f51b7ad36051d76f3f0ed4494b40d70edb7d4dc19c23c33d0094cc4b90cde9b7276829ede718e7c9eb6820a44914d26715a3aa3f0f9a4b4d4d494afa12c14b53513ad30861b6d36e854ae4c92be0851f000cf2063a28081d297bd157d6becd476dd6141434da4ad92dbea28de4f523b442374c1f014928000402739fe2e881201c0a6cc55ddf7b736bd1f1556a0d45a96e541154ce528a86db6fa51e9720edc95f7f0879f001273c63a6c4e052aa3b558b5ade698eba68aed6ed3b24acd1435b1a23b408a76c98655930cc3380318f767c0352f56f26dd6a63e2831f78a709d58a08ee277b34f580d0dc7d7115be6220630a92cf920334922f09082deed9b98e303af3671579da2ecacfbd1b1c7a1fb0f9d3a9a2931d693bdccd717092e8d6db36a98abeb2b245885540be9d3d3c6fc158b761e47008cbb615718001c9ea16f68924ade1b4ef39fb0fa9a138da9274ee6af23d3f2eb3b2525bb4ceb17b35b66a3682b2a2542cea81f2fe9b1fca5b196727713c655460b30ea90e94b8d491b74a2a5049a14d45af341f6bed77dd48baaeaf545cccf1dba9ea6408d28ac480a86423d912471602840402c0f24e7ad516b7378e25b08081bfa4fcc93494913bc9a4354fe224c5019b4be94dd7bac63f595f7393ea0c796da16100e54918265625b270a140cb69abb042c6975c212384e3f3cbe75108cc8deaaa4d55dc3bdeb068b4551a525750977a5fa79a384388fdad2299d82c9eec91824f9c7cf5262c6d2dadc77e641de731e18c8a886c277a75d7772fba162b0574da57496a1b9eb3bf55b53b4a94e6782cf441111522f4998196662ee5cedc7ea063aca6eced5f580b584b606730544e79e00c54bdd56dbd44edd58a9bb716facbe7756ac555d6e738885053d1b5cda9f00b334aea36fa99c03b58e3e793d3debbed8b0d59884a46f84f944f151eec6c697b4947a2f4c69ca3a9d4f60d5763b8d5d2bd5525cc410d5d1e5994192972deec86c07724a9fd707ad15a9f79e296549526608c838e0f4c8c8aef5ebe6edec023bb216274a8fbc25592467a1c12271d4501dab43dd27b6163a8127a6a07dcb4827dcd86192c10b67701c12079c0e7c75a26f105cd21393e1f9fe2b91b953cde90ac8e378feb147fa46d5ae29a9290d9add5172a6ac87688d6959de9591c637285c2365b0430c30623918eabaed85c38a4a5242d3e1b83f9f4a0aee5c73e231d4707c6369eb146ba9f46ea1d51a6e8ec31e9e9e8eae9aa048d4d551e62a76180ed0c99cc48e1812872bc641f0453b5ff6375fea602b13c7813f7a812906457bd2fd9cb3d82b69a9b5057c35d79675929286dd116829c6ec6e9e738e307f2c64b1240240e7aea1694270a1bfe669024d6add2f6ca9d29607bb694d074f5b73861124310b7ae249f824ee2acc3905b24678e08e3a3a12529d206d518149bd61de2d537bee44535fea6aa7ba513c70d5b542889a898f2238938dbb4104e71f9befd51716507dfc91575983b1814d1a7ee356c534d13c8d3cccca1dd94e2650061c79cfdc11d20bd4246d47d036e953f46fe2075e50d05cedab72bbd2b514bfb40434441df113875dae085c0e723e478e7a122e14def4ce5b87234e2ba6a5fc5bd658ab1a9aff0053a9671048aae6082095e02fe3710bedf690de73b79fbf5a4870293a9391598a4a904855451de287b813d250d40bd9a6b9fb23b8d6d4a34099563866d8719c7e5f3923a980a5e3ed4a62955dd8fc3cc525b6aafe9dd8aca2a0a748e6aa829d908dd861180aaa809ca63ef9604f40559201d647d07daa5de28f3599f5a3774ac5410d3cf78a8b95ade4ddea4d4c1e4400e16276396dbed0d8271963ce4f540f6630874bba7de3be4fcfcea4a70b820d08c9a635e43414b5b5d437c4a3b8eefa59248a610d42e79d84f0c33e71d5c0d01909fa547513cd115cf4e5c7454769b077634c5e20a4a5125c692d8aa29daa0ce4032cb2372062255000c951e4739ad716ef2492c9014a032730074151f887bb563a935bcd62a6167d3da1e8ac704916e11a8dc5c30e1c32f078239e7aa28ec8215aee1c2a3500df3353bb41dc1ed869cbf53ea3eeab5eae53c1540d359a28c35b831523ea2a9b797942e4fee828078cee1c743beb3b828d36894edb9dfc87de8a1a4609de8bfb9bf887a6365a18f40fd5535c6ec192d74b4b18a58a829d9f60d89105c977460aa771f2410319c5b2ec77dc789bb3eea77ccc9dfca04e7e5515020c4fca9a755a37b5d0692d39277c8dc85c528923db157bc4beb1199090c4316ce41e481c78f9a2d5c2da79c16624133b4e38f4e9480c5227b4fdbdd53a934954685d67a8aaadb6555a98e8e191777d2ccdee2bb4e386645200fe8475b77f7acb4f8758482be4f5f5a27b5a95a1a5a8e84998fb78d42b1688bf582bebf4b0b6c178b950b2ad555471cac638cb9442588180fe065b865f83d5d45ca6e5297d230783c78fa7f743ba78b9a55b8db269ada634f6a3b86658fb71a96be9563ffbcd65b6f2630c76af043171cf208247818eb65a6d4520b8983e06a198938a32d39d9fd452475ba82af424f69a6876d4d0cc753bfa92c7c30924dccb875058ed200f83f3d5773d99c5168a754e319f99a9eb9c0deaee2b5f6cac652bad916b396dd049109c535d167588b17dcdec037ed2ab90a470f91d59284a84a098f03522548f8a98d04fa96c5a16bef56caab7d7c0e5eb2944f3ac6cf0e54ac21656660fb09c0e54e3f84f1d19b96c4295bf5a60952f6158635eeaed6f4fdc7d41ab6e547f4f2dcebde57a4aa88e231c2a019e73b1579f9c74079ad664ef4669518a61e90fc485c6c6d058b5250db278225cd3d5d333c8226233978812079c9c71fa754834a5094d5e0f246f56545dcdb96a2bca0b6c2d34d525c3d46e911662dc1015718c8c7dc71d39b62adcd0d773a7229a3dabfc478d3177afd255fa7bf6ec3572092aea2e290d447048b110bb07a4cc01e17dcd81fa679bf6e90d0d2998aa0e3c5d3a9547137e3034f5b2a6892efa4e4b254d44cc9145476ca499f607c2be42606e2b90383c73c8e8c5c120106860cd42b8fe332cd283b56b041282919a9b4d2e091eedc3f77f195233f3d2ef39135280686750fe2aa6a79aaa86e3a4e37a8694348f35928a67aada4059195976e491c06c9040fbf4e56b18a6c4d47ba7e217bc960d614d4163fd95738ec5246e71491c5415343220911c53eddd1b00c55c45864c6e1c71d0ca9e4aa2694a6b50d445a43bdd6186f2fa623aab9d3e209a9e5a757642c3250348a44919dc70c382189e39eae2714c44d65dfc40fe142eb5d44f71d35a35e334e8ea94a1155976f80bb3f367803e3dbfa8e99690b18a6492306b1f2762759d5c912dce8d2cb0b9cc93dc03218932017f4c0ded8cf80327e3aa4e2168495013e1451079a24ed735aec7dd6d3da7ac56f8a8e821aa74aabf57f35552238e4e559bdb4f112321179e06589eb07b49874da2dd7b78f846c248f99fa78522230296fddcd6b71ee2eb7b85fa4699e8d6568681242582c00f07f9b7e627f5eaf766d98b2602233b9f3feb6a6ad614dad2d543a621bc5d2ccd7ebac15d3e665e07a0155b211496e482a0e377df03ae252c12beed263cea98f29a99536bd23ae68ae72e9d964a3acaff00a79ae144e433088319b7c7ff00cc5cbfb8791c7dba936f3f6a44ed91f3c7f15304a448157369b555c1799aa74e522ac15b3c751fb3a829d235f55942c924bc6d545c65500c02793e00b6d3cb7c84be49f3cfc87ef4b51154b557986d5566cdaebba57217c91763c166a2926480127d34694b2f3fc88c9eba5b57cb69d0c3503a9304d19092702badb6d555057cf70b2bd5d47a3ba5a5abf46480bbe0659d33812673c0cf8ce7e7abfdcac895083f9cd596d608cd543506aea1ba9aba8f51a1932b372cf924febf273c0ea5dde8f7a8c95138a2cb6de2486e34ada934edb2e91a868a3a5bedbe2ab42180048128240c01ce78e391d10294302a2a08264d12e96d25f875d673d4d06a8fc3fd0e9fb8432393536ea89a8a0753e3da5f0ac47231c11e318ea4d3a54487131415a7ff004269a9a66c3d92d0e69a5d1fa3adee62ca219d8d68518047ba4dc01e41e3cf9e8e0b64488a11046f45343aa7465bea76dafb69a5e15fcdba3b7c31152739c600f3fcfa798c0351f4aa5beea4eda5f2e62beeda1b46cf581c6259ed80c8719f2e0e78c9ff00afdfa89711c9a5e954777bb76aea923b7c5db1d0b551d3d50aa8a08a89559a50a14395de0390300839f1e3a817d00c033f2a5b6f55babbba56b896df595dd98d397316cc430cad6e826f48925b202be31c67241e460fc75055c11c7d453c034b9d41decd5f41526b6c9a4349dae39a310c8cda6d036d5600465ce41e33e4f81e7c74155cac1998a7001a8aff00886d7763b6b5b6c571b55b2b150015168a3860f0d803622fc01f94fdff00a74c6ea0452f0a15b9f7c3f167a819abb486bdd5f5506037a9494ebe9e49e546d43f271e3e074c879c5653245480037a18aeeeff00e326e50cab5773d59565d8a979ec6b2320538382d09c73c723a7ef9d1d7eb4fa5073417aa7b8bdf7b9d1fd2eb2b6d757c6015dd596968f72b0c60fa6881ba7f6859f8a9b4a2706949574ba8d655758aaa90282a16281a3f27273c727a6ef0466911d29c5ad6eb2e96b85b34adc34d50cf592cf2469fb3a99231b76a6c689e3f7c8c72f92dce7c01d726c35ed482f2544011bfaef5506448a72d2e86d5b596434762a6a9b4ca1d6aeaa5ae912135aa40daac4c85d5a30a171ca90739c839c70ea02b53991c0e9fe69024d49a0d40a9157d9a8af820a8a77f42e32d3333ceb22614aa7f0bfdce09279c0e8ec5d061616a900edf9f7a2a5b2a35329bb5fa2350d3455ba7f5ad1899d9ddcd469c6951d4ed255a469108230705483824e41e7ae96ddfb7770a79449e8223f3e46ac159182050e6acb7f77bb2d6696be9b5cd92e56433c70422aacf525c8918edc3658640cfb8b608007248eb690b4a91285931e114c9582622ab6d3a83bb1aaaf51d1e9fd6fa76753135488599e8001c7214aeef2701959803f39ea6905cc6aa9ead02629cd53da0bfddad9457ea9a5a3adb9c4f0179296e80cb0cac4ef2db910118e71cee2d8dc00e6c218d2684a70ab7ace9abbb3ddc2d0f5576aab46b993dd22b55d3ca64c8dc73c33fe6239fe43e7a038d7767c2889598a79fe182b6fb5ba7af76e5bac1e851b9ad6acf5f67a9b955496555ce06c057e48fb63ab2d234881b505464cd74b16b3ef86abd405f47ea2a3a4b1e18b24d4bf5064520e2421f0472001c8cf381c67a621c51c18a520082299125d6ae928e58ab9ac535cf70594c904059a4da373b21f70c9f03f974481cd24807314bad69dcbd4fa5ed724d4ed4a27a7c894a52c491c07ce785ce07b41c7dcfdba13908134e74d2de8fbfdab7515c9ad9252428f2a4829a48e35732ecdb97650323249fe83f5e9249269bdd8aaeaca6d4ddceaf34fa52a696aeb245936ac319513b614127f900c32dc7073e73d414d25df87fcd2040a2fed77676969ec35516b9d2900b9d0dd8d3cdbe76925870a836950d80b97460c32486c8e4749ab56d23de4e6915956d40fa9b4cebbb56a3974fe8cbb7d2d31635d1d2c723a0589c3178c0f39cfa8a013e4af4fdca82b4a76a885139a25d17ac3b814daba8a6f4ef069e9126a57b6557ad896a366c425989f5199f9033e50f44015ab6a457889a2ed11abb575bec5acee1a9ef75265b1c2b5a8f59eb6c4dd116109ceddc415604ae467033f7704a52678a40ea306927aa3f123af6b5e014b147eae0bb44c032460819c120f24f41efc9a9000d47edf57e80aeb1fedcb26a3adb3d65b296a4d2cb718d6a6a28ea2520b864f6ee0eabb95e33fc2ca70d8ddc0dd9ba69deedd4850247c38040f1fdc1f03e435349075035c64abd613cb71b45ce4a3d611cb18f4e6133bd254fc8f7c7b59233939190d9ce48c63a82976e929753288f0c8f43b9a9251b8a3ab857ea8d6b5f67a4bcf666d3688ed51b08aaa8209e77108c322fadbd780ca76971c1f93f305adaeecf74e133c639ebbfd29b414994d17697bc52d7575da8a2b14f6f9edccd31a4a9d812b76afb9e2f7142d91b800db8827e78ea22c2e93a5c1f0e2089907c6ac210bdd78fce45526a6d3f79bd69cb84da72e9f5d6d9a8657a8d3b70dd52b390095921973ba2994e193f55db9c123adf69f5a94945dca5636575cec478edf6a72d90648acd3a435a6a7b599d69aa27db4cac4ab16468d738ce7e07073fa8fd3ae802630314b5cef4d8d33dc9d7baaaf56aa0d2f533d5d5553ad1a5be0cfa954ce40f45d548ce7006401f7e319e910bd4024d4147315b1fb35f83babb937ed8eeac1704a566dc2d1532bfaa9b58e55dbe548c7c90475693eea615935193cd3d350e864a5a67b2e87d2562b6c3511115f30a758d9d5576a20214e4fc64fe503a20513b9a6a555ef4ceb5b74b1d35ab4ecd4e66458c4f12a3a951e403fc2380013f6f1d4c99a68eb499d6fdbad62f71aebe4f6c9e09e2a9510565352caf23b2617284afe5c8049cf38fd7a194aa9e714256cd03dd7d794173ad3a36ff34d3c1341198edf2fa7292a0e4e401e7febc8e86a42dc499a62668efb37f83bee7fed8a1bcea1b0cb6682df4e25592797d298cde9ba845500e7395c93f0b8f93d49901091ace698034e4d1bf84bbd69dab866b4dcd286963786611d5460be551959778e4021c838cf2a3e3a9eb424e0d38079a67cfd81b4d7dc1ee5555ab4d3542aad5fa5ee131da017fb86c0001fd07dba72f0e94b455ac1d89d1b4b2b552cd2b54166c4a618d9b61ce14e4720124e7a817cf4a5a050e6a2fc38697be6ca75d515b0e2a0d4e1e04728fbcb653918c12719ce07530f9036a451c4d0df73ff000c8daeada2cb1ea2b7476f96a99aa6292392332d390abb729e18283fa64f4c5695e142904c08a4f49ff675d0493faefaaed92a60a8f54c85c78da32bb41c0079f24b7e9d4425ae4134803580f4959b55dc273156da28a7ac8d4252b4959182487c3a1ce115b6ee20b6790075c4ddbd6e88d0a21277c1e983d77e94643414213f3a6cd92e5143a3e5b9cfaae8e44a69a489ab23b82c623a88d8fa5088c663937aed0546013c679cf58ab6106e023bb3246d1c1dccef8fdaac810902a55a75ce85b34567b9eb1ee1ceb75ab89193e9276109766dcdba28ce2200f1fbc272319cf5d45876736d8f7d00839ea479fe62a7a50d8c8cd1969def96857d452e9ed496c7b57be3f46a670b34122919562cbc267eff00979f3d7405401cd4526720c538df44a16370d3ec8b05480e1a1db839fe343e3247f43d53b9b74dc20a7ad192a11a5553f4e68eed90f522d7bdb1b1dfa9206668649e814d44596c95dd81b977127072413c7dbab36ce3896d297b245567d904ca6997a5359f6b74a46b55a37b5ba6ed0f49bc52cf051c31ba96e1ff0078017c9fe7e38fd3abc13de09071548fb98508344e9dff00ab72236b7d3161924abb638fd00e906052d71c57a1df3a9d92cb252c29b41da8a0b36efb12781d22d014daea24ddf1b824ab3bdbe91171c19060ff00f7e78f9f8e977691bd20a9aaaadef56b199cb525d92343f97d28c1c01fae3a5a1229e6aba7ef86bc910c311e403fbe92227fae08031fd474ddd8a79357767ef4de23daf71ae82a08c6f8988888e3fd9c8c7cff002e3a4528a535635bdf530c14f2dae05ad12b48b2a22aa3270483ee7f008e7827a6d29a79a10befe20eec28229d27fa394484eea98b0a509c23e0121413f1c9fd07513a409a699a1fa7fc504b4d5d1d2d5d6255199b263a79019028f2d8f680be7fe87a885209814d079a2eb77e26b4d5cea120a512354300822219955b3862ceb951e783e4fce3a98838a6262aa35c776c58a9ea6bee172483d125a0a66531cd20c820aa3333673c02ca01e71d39586c669893c529ae7f8aad64f0474d48208d636c7af3567a0ce464107d857cfdbedd43bd9a6d71bd7cf3d27ff89517fcd1ff00d4dd73d73ff863ff00915a0c71e5fc1aed60ff00e18bbffcda5ff5af437fff002d1ffcfdea1ff64f9d0ad7ff00767ff8a3fc8f5aacfc3537e8d2dbff00bbac7fe09ffd6fd18ec2a3c7cabe85fe1cff00f07b4dff00877ff574c9a38f8a98d77feec3fe22ff00a7a91f868637a56e93fefb7aff009a0ff4cbd1acb6579d57bdff0093d288a97fb497fdff00fd3abaaaacadead3f80fff004ff91e9cd46a15c7c4dff0c7f91e86aa926bf547f7fa5ff787503444fc35655ffd949fe1ff00f53d31a540f59fde23ff0070741348d73b67cff8d4ff0033d3b7b9a6a1cbbf98bf9bff00aba19dea42979a7ffbcea1ff00762ff36e9f93513c55ff006e3fb8dcff00c09fff00345d24ff00c6698ef543dc3f307f8bff00f41d0d7f07ad44ee680f57ff006f4fff000cff00a9ba18f8a9d35fffd9', '2009-07-20 14:34:24', '2009-07-20 14:34:24')[0m
+  [4;35;1mPhoto Update (1.5ms)[0m   [0mUPDATE `photos` SET db_file_id = 4 WHERE (id = 7) [0m
+  [4;36;1mSQL (43.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/users/1/photos
+Completed in 1048ms (DB: 150) | 302 Found [http://localhost/users/1/photos]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosController#index (for 127.0.0.1 at 2009-07-20 14:34:25) [GET]
+  Parameters: {"user_id"=>"1"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mPhoto Load (1.2ms)[0m   [0;1mSELECT * FROM `photos` [0m
+Rendering template within layouts/application
+Rendering photos/index
+  [4;35;1mPhoto Load (1.4ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1) [0m
+  [4;36;1mPhoto Columns (35.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.user_id = 1 AND (selected = true)) LIMIT 1[0m
+Rendered topics/_user_photo (2.1ms)
+Completed in 185ms (View: 48, DB: 43) | 200 OK [http://localhost/users/1/photos]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:34:26) [GET]
+  Parameters: {"id"=>"5", "user_id"=>"1", "photo_id"=>"5"}
+  [4;35;1mPhoto Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.1ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '5') LIMIT 1[0m
+  [4;35;1mDbFile Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Load (1.5ms)[0m   [0;1mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 2) [0m
+Sending data Desert_Landscape.jpg
+Completed in 95ms (View: 1, DB: 9) | 200 OK [http://localhost/users/1/photos/5/photos_managements/5]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:34:26) [GET]
+  Parameters: {"id"=>"6", "user_id"=>"1", "photo_id"=>"6"}
+  [4;36;1mPhoto Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `photos`[0m
+  [4;35;1mPhoto Load (1.0ms)[0m   [0mSELECT * FROM `photos` WHERE (`photos`.`id` = '6') LIMIT 1[0m
+  [4;36;1mDbFile Columns (5.6ms)[0m   [0;1mSHOW FIELDS FROM `db_files`[0m
+  [4;35;1mDbFile Load (11.8ms)[0m   [0mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 3) [0m
+Sending data Toco_Toucan.jpg
+Completed in 87ms (View: 2, DB: 21) | 200 OK [http://localhost/users/1/photos/6/photos_managements/6]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PhotosManagementsController#show (for 127.0.0.1 at 2009-07-20 14:34:27) [GET]
+  Parameters: {"id"=>"7", "user_id"=>"1", "photo_id"=>"7"}
+  [4;35;1mPhoto Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `photos`[0m
+  [4;36;1mPhoto Load (1.3ms)[0m   [0;1mSELECT * FROM `photos` WHERE (`photos`.`id` = '7') LIMIT 1[0m
+  [4;35;1mDbFile Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `db_files`[0m
+  [4;36;1mDbFile Load (9.7ms)[0m   [0;1mSELECT * FROM `db_files` WHERE (`db_files`.`id` = 4) [0m
+Sending data Waterfall.jpg
+Completed in 71ms (View: 2, DB: 16) | 200 OK [http://localhost/users/1/photos/7/photos_managements/7]
