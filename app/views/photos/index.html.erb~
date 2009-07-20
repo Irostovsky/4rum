@@ -4,11 +4,10 @@
 <ul>
   <% for photo in current_user.photos %>
     <li>
-      <%= image_tag(photo.public_filename) %>
       <% if photo.selected? %>
         Current
       <% else %>
-        <%= link_to 'Make current', user_photo_path(current_user, p)%>
+        <%= link_to 'Make current', user_photo_path(current_user, photo)%>
       <% end %>
     </li>    
   <% end %>

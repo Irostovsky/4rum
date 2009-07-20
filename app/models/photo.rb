@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
   
   has_attachment :content_type => :image,
-                 :storage => :file_system,
+                 :storage => :file_system, #:db_file,
                  :size => 0.megabyte..2.megabytes,
                  :resize_to => '150',
                  :path_prefix => 'public/files',
@@ -17,5 +17,5 @@ class Photo < ActiveRecord::Base
     photo = user_photos.find_by_id(to_select_id)
     photo.update_attributes(:selected => true) if photo
   end
-  	
+    	
 end

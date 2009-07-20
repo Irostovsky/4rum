@@ -4,4 +4,8 @@ module ApplicationHelper
     RedCloth.new(text, [:filter_html, :filter_styles]).to_html
   end
 
+  def photo_content
+    send_data Photo.find(:first).current_data
+  end
+  
 end

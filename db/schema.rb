@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090717091541) do
+ActiveRecord::Schema.define(:version => 20090720104111) do
+
+  create_table "db_files", :force => true do |t|
+    t.binary   "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "photos", :force => true do |t|
     t.integer "parent_id"
@@ -21,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20090717091541) do
     t.integer "height"
     t.integer "user_id"
     t.boolean "selected",     :default => false
+    t.integer "db_file_id"
   end
 
   create_table "posts", :force => true do |t|

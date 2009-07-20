@@ -10,6 +10,7 @@ class CreatePhotos < ActiveRecord::Migration
       t.column :height, :integer
       t.column :user_id, :integer
       t.column :selected, :boolean, :default => false
+      t.column :db_file_id, :integer
     end
   end
 
